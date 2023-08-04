@@ -15,6 +15,13 @@
 		7F1797582A7DB61900DE2F41 /* BitMexCryptoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797572A7DB61900DE2F41 /* BitMexCryptoUITests.swift */; };
 		7F17975A2A7DB61900DE2F41 /* BitMexCryptoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797592A7DB61900DE2F41 /* BitMexCryptoUITestsLaunchTests.swift */; };
 		7F1797712A7DB9BD00DE2F41 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797702A7DB9BD00DE2F41 /* Configuration.swift */; };
+		7F1797792A7DC3FE00DE2F41 /* WebSocketStreamError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797782A7DC3FE00DE2F41 /* WebSocketStreamError.swift */; };
+		7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17977A2A7DC46B00DE2F41 /* WebSocketStream.swift */; };
+		7F17977E2A7DC4CE00DE2F41 /* Debugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17977D2A7DC4CE00DE2F41 /* Debugger.swift */; };
+		7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17977F2A7DC50600DE2F41 /* WebSocketProvider.swift */; };
+		7F1797822A7DC5DB00DE2F41 /* SocketRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797812A7DC5DB00DE2F41 /* SocketRequest.swift */; };
+		7F1797842A7DC60A00DE2F41 /* SubscriptionTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797832A7DC60A00DE2F41 /* SubscriptionTopic.swift */; };
+		7F1797862A7DC62A00DE2F41 /* BitMexOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797852A7DC62A00DE2F41 /* BitMexOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		7F17976F2A7DB9AE00DE2F41 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		7F1797702A7DB9BD00DE2F41 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		7F1797722A7DBC1800DE2F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F1797782A7DC3FE00DE2F41 /* WebSocketStreamError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketStreamError.swift; sourceTree = "<group>"; };
+		7F17977A2A7DC46B00DE2F41 /* WebSocketStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketStream.swift; sourceTree = "<group>"; };
+		7F17977D2A7DC4CE00DE2F41 /* Debugger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debugger.swift; sourceTree = "<group>"; };
+		7F17977F2A7DC50600DE2F41 /* WebSocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
+		7F1797812A7DC5DB00DE2F41 /* SocketRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketRequest.swift; sourceTree = "<group>"; };
+		7F1797832A7DC60A00DE2F41 /* SubscriptionTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTopic.swift; sourceTree = "<group>"; };
+		7F1797852A7DC62A00DE2F41 /* BitMexOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMexOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +116,8 @@
 				7F1797662A7DB82700DE2F41 /* Presentaion */,
 				7F1797692A7DB85E00DE2F41 /* Domain */,
 				7F17976A2A7DB86800DE2F41 /* Data */,
+				7F1797752A7DC38D00DE2F41 /* Core */,
+				7F1797762A7DC3A900DE2F41 /* Network */,
 				7F17976B2A7DB87900DE2F41 /* App */,
 				7F1797422A7DB61900DE2F41 /* Preview Content */,
 			);
@@ -159,6 +175,7 @@
 		7F1797692A7DB85E00DE2F41 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7F1797772A7DC3E600DE2F41 /* Entity */,
 				7F1797742A7DBF1800DE2F41 /* Repository */,
 			);
 			path = Domain;
@@ -167,7 +184,7 @@
 		7F17976A2A7DB86800DE2F41 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F1797732A7DBF1100DE2F41 /* Entity */,
+				7F1797732A7DBF1100DE2F41 /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -202,11 +219,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		7F1797732A7DBF1100DE2F41 /* Entity */ = {
+		7F1797732A7DBF1100DE2F41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7F1797832A7DC60A00DE2F41 /* SubscriptionTopic.swift */,
+				7F1797852A7DC62A00DE2F41 /* BitMexOperation.swift */,
+				7F1797782A7DC3FE00DE2F41 /* WebSocketStreamError.swift */,
 			);
-			path = Entity;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7F1797742A7DBF1800DE2F41 /* Repository */ = {
@@ -214,6 +234,39 @@
 			children = (
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		7F1797752A7DC38D00DE2F41 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7F17977C2A7DC48D00DE2F41 /* Helper */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7F1797762A7DC3A900DE2F41 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7F17977F2A7DC50600DE2F41 /* WebSocketProvider.swift */,
+				7F17977A2A7DC46B00DE2F41 /* WebSocketStream.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7F1797772A7DC3E600DE2F41 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797812A7DC5DB00DE2F41 /* SocketRequest.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7F17977C2A7DC48D00DE2F41 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7F17977D2A7DC4CE00DE2F41 /* Debugger.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,8 +399,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F1797822A7DC5DB00DE2F41 /* SocketRequest.swift in Sources */,
+				7F17977E2A7DC4CE00DE2F41 /* Debugger.swift in Sources */,
+				7F1797862A7DC62A00DE2F41 /* BitMexOperation.swift in Sources */,
+				7F1797842A7DC60A00DE2F41 /* SubscriptionTopic.swift in Sources */,
 				7F1797712A7DB9BD00DE2F41 /* Configuration.swift in Sources */,
 				7F17973F2A7DB61800DE2F41 /* ContentView.swift in Sources */,
+				7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */,
+				7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */,
+				7F1797792A7DC3FE00DE2F41 /* WebSocketStreamError.swift in Sources */,
 				7F17973D2A7DB61700DE2F41 /* BitMexCryptoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
