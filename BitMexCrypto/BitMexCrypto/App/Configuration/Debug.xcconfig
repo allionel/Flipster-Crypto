@@ -1,0 +1,14 @@
+//
+//  Debug.xcconfig
+//  BitMexCrypto
+//
+//  Created by Alireza Sotoudeh on 8/5/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_NAME = BitMexCrypto Debug
+APP_BUNDLE_ID = com.flipster.BitMexCrypto.debug
+APP_ICON = AppIconDebug
+BASE_URL = wss:/$()/ws.bitmex.com/realtime

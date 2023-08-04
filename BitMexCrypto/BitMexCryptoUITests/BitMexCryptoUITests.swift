@@ -1,13 +1,13 @@
 //
-//  BitmexCryptoAppUITests.swift
-//  BitmexCryptoAppUITests
+//  BitMexCryptoUITests.swift
+//  BitMexCryptoUITests
 //
-//  Created by Alireza Sotoudeh on 8/2/23.
+//  Created by Alireza Sotoudeh on 8/5/23.
 //
 
 import XCTest
 
-final class BitmexCryptoAppUITests: XCTestCase {
+final class BitMexCryptoUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

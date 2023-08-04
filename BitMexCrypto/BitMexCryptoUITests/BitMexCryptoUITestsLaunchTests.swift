@@ -1,13 +1,13 @@
 //
-//  BitmexCryptoAppUITestsLaunchTests.swift
-//  BitmexCryptoAppUITests
+//  BitMexCryptoUITestsLaunchTests.swift
+//  BitMexCryptoUITests
 //
-//  Created by Alireza Sotoudeh on 8/2/23.
+//  Created by Alireza Sotoudeh on 8/5/23.
 //
 
 import XCTest
 
-final class BitmexCryptoAppUITestsLaunchTests: XCTestCase {
+final class BitMexCryptoUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

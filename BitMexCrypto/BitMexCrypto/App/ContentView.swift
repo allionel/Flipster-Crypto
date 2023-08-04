@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  BitmexCryptoApp
+//  BitMexCrypto
 //
-//  Created by Alireza Sotoudeh on 8/2/23.
+//  Created by Alireza Sotoudeh on 8/5/23.
 //
 
 import SwiftUI
