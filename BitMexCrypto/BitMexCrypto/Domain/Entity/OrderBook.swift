@@ -16,7 +16,7 @@ public struct OrderBook: Decodable, Equatable {
 public struct OrderBookItem: Decodable {
     public let symbol: String
     public let id: Int
-    public let side: TradeSideType
+    public let side: TradeSide
     public let size: Int
     public let price: Double
     public let timestamp: Date

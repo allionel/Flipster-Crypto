@@ -7,8 +7,18 @@
 
 import Foundation
 
-final class WebSocketStream: AsyncSequence {
-    typealias Element = URLSessionWebSocketTask.Message
+typealias SocketElement = URLSessionWebSocketTask.Message
+
+protocol WebSocketStream: AsyncSequence {
+    associatedtype Element
+    func sendMessage(_ message: String) async throws
+    func connect() async
+    func suspend()
+    func disconnect()
+}
+
+final class WebSocketManager {
+    typealias Element = SocketElement
     typealias AsyncWebSocketStream = AsyncThrowingStream<Element, Error>
     typealias AsyncIterator = AsyncWebSocketStream.Iterator
     
@@ -18,7 +28,7 @@ final class WebSocketStream: AsyncSequence {
     
     init(url: String, session: URLSession = URLSession.shared) {
         guard let url = URL(string: url) else {
-            Debugger.print(WebSocketStreamError.urlIsNotValid.description, type: .error)
+            Debugger.print(WebSocketError.urlIsNotValid.description, type: .error)
             return
         }
         socket = session.webSocketTask(with: url)
@@ -38,15 +48,10 @@ final class WebSocketStream: AsyncSequence {
         tryWithError(subscribeMessages)
         return stream.makeAsyncIterator()
     }
-    
-    func sendMessage(_ message: String) async throws {
-        let socketMessage = Element.string(message)
-        try await socket?.send(socketMessage)
-    }
-    
+
     private func subscribeMessages() throws {
         guard let continuation else {
-            throw WebSocketStreamError.configurationIsNotInitialized
+            throw WebSocketError.configurationIsNotInitialized
         }
         socket?.receive { [unowned self] result in
             switch result {
@@ -57,5 +62,28 @@ final class WebSocketStream: AsyncSequence {
                 continuation.finish(throwing: error)
             }
         }
+    }
+}
+
+extension WebSocketManager: WebSocketStream {
+    func sendMessage(_ message: String) async throws {
+        let socketMessage = Element.string(message)
+        try await socket?.se.send(socketMessage)
+    }
+    
+    func connect() {
+        socket?.resume()
+        Debugger.print("Socket has been resumed")
+    }
+    
+    func suspend() {
+        socket?.suspend()
+        Debugger.print("Socket has been suspende")
+    }
+    
+    func disconnect() {
+        socket?.cancel(with: .goingAway, reason: nil)
+        continuation?.finish()
+        Debugger.print("Socket has been terminated")
     }
 }

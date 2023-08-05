@@ -16,7 +16,7 @@ public struct RecentTrade: Decodable, Equatable {
 public struct RecentTradeItem: Decodable {
     public let timestamp: Date
     public let symbol: String
-    public let side: TradeSideType
+    public let side: TradeSide
     public let size: Int
     public let price: Double
     public let tickDirection: String

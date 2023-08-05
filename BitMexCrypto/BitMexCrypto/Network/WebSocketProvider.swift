@@ -7,16 +7,20 @@
 
 import Foundation
 import class Combine.Future
+import struct Combine.Deferred
+
+public typealias RemoteResponse<T: Decodable> = Future<T, WebSocketError>
 
 protocol WebSocketProvider {
-    func subscribe(to topics: [SubscriptionTopic: String]) async throws -> Future<WebSocketStream, Error>
-    func unsubscribe(from topics: [SubscriptionTopic: String]) async throws -> Future<WebSocketStream, Error>
+    associatedtype Provider: AsyncSequence
+    func subscribe<T: Decodable>(to topics: [SubscriptionTopic: String]) async -> Future<T, WebSocketError>?
+    func unsubscribe(from topics: [SubscriptionTopic: String]) async throws
 }
 
-final class WebSocketManager {
-    fileprivate let webSocketStream: WebSocketStream
+final class BitMexWebSocket<Provider: WebSocketStream> where Provider.Element == SocketElement {
+    fileprivate let webSocketStream: Provider
     
-    init(webSocketStream: WebSocketStream) {
+    init(webSocketStream: Provider) {
         self.webSocketStream = webSocketStream
     }
     
@@ -25,42 +29,55 @@ final class WebSocketManager {
         let request = SocketRequest(op: operation, args: args)
         return try request.jsonString()
     }
+    
+    fileprivate func socketStreamIteratedOutput<T: Decodable>(by message: String) async throws -> Future<T, WebSocketError>? {
+        for try await message in webSocketStream {
+            switch message {
+            case .string(let message):
+                let data: T = try message.modelObject()
+                return .init { promiss in
+                    promiss(.success(data))
+                }
+            case .data(let data):
+                let data: T = try data.jsonString().modelObject()
+                return .init { promiss in
+                    promiss(.success(data))
+                }
+            default:
+                return .init { promiss in
+                    promiss(.failure(WebSocketError.failedReturnExpectedData))
+                }
+            }
+        }
+        return nil
+    }
 }
 
-extension WebSocketManager: WebSocketProvider {
-    func subscribe(to topics: [SubscriptionTopic : String]) async throws -> Future<WebSocketStream, Error> {
+extension BitMexWebSocket: WebSocketProvider {
+    func subscribe<T: Decodable>(to topics: [SubscriptionTopic : String]) async -> Future<T, WebSocketError>? {
         do {
             let message = try request(.subscribe, topics: topics)
-            Task {
-                try await webSocketStream.sendMessage(message)
-                Debugger.print("Subscribe to: ", topics)
-            }
-            return Future { [weak self] promiss in
-                guard let self else { return }
-                promiss(.success(webSocketStream))
-            }
-        } catch {
+            try await webSocketStream.sendMessage(message)
+            Debugger.print("Socket subscribes to: ", topics)
+            return try await socketStreamIteratedOutput(by: message)
+        }
+        catch {
             return Future { promiss in
-                promiss(.failure(error))
+                promiss(.failure(error.asWebSocketError))
             }
         }
     }
     
-    func unsubscribe(from topics: [SubscriptionTopic : String]) async throws -> Future<WebSocketStream, Error> {
+    func unsubscribe(from topics: [SubscriptionTopic : String]) async throws {
         do {
             let message = try request(.unsubscribe, topics: topics)
             Task {
                 try await webSocketStream.sendMessage(message)
-                Debugger.print("Unsubscribe from: ", topics)
-            }
-            return Future { [weak self] promiss in
-                guard let self else { return }
-                promiss(.success(webSocketStream))
+                Debugger.print("Socket subscribes to: ", topics)
+                webSocketStream.disconnect()
             }
         } catch {
-            return Future { promiss in
-                promiss(.failure(error))
-            }
+            throw error
         }
     }
 }

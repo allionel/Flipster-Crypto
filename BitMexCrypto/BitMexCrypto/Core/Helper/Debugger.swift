@@ -30,7 +30,7 @@ public func tryWithError(_ arg: () throws -> Void) {
     do {
         try arg()
     } catch {
-        let error = (error as? WebSocketStreamError)?.description ?? error.localizedDescription
+        let error = (error as? WebSocketError)?.description ?? error.localizedDescription
         Debugger.print(error, type: .error)
     }
 }

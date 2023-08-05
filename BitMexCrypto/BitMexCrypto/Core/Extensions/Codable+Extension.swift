@@ -15,7 +15,7 @@ extension Encodable {
         do {
             let encoded = try encoder.encode(self)
             guard let json = String(data: encoded, encoding: .utf8) else {
-                throw WebSocketStreamError.stringToDataConvertingFaild
+                throw WebSocketError.stringToDataConvertingFaild
             }
             return json
         } catch {
@@ -29,7 +29,7 @@ extension String {
         let decoder: JSONDecoder = .init()
         decoder.dateDecodingStrategy = .iso8601withFractionalSeconds
         guard let data = data(using: .utf8) else {
-            throw WebSocketStreamError.dataToStringConvertingFaild
+            throw WebSocketError.dataToStringConvertingFaild
         }
         do {
             let decoded = try decoder.decode(T.self, from: data)
