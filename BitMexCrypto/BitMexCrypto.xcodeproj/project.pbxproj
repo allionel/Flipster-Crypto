@@ -42,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F1797392A7DB61700DE2F41 /* BitMexCrypto Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitMexCrypto Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F1797392A7DB61700DE2F41 /* BitMexCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMexCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F17973C2A7DB61700DE2F41 /* BitMexCryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMexCryptoApp.swift; sourceTree = "<group>"; };
 		7F17973E2A7DB61800DE2F41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7F1797402A7DB61900DE2F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		7F17973A2A7DB61700DE2F41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7F1797392A7DB61700DE2F41 /* BitMexCrypto Debug.app */,
+				7F1797392A7DB61700DE2F41 /* BitMexCrypto.app */,
 				7F1797492A7DB61900DE2F41 /* BitMexCryptoTests.xctest */,
 				7F1797532A7DB61900DE2F41 /* BitMexCryptoUITests.xctest */,
 			);
@@ -286,7 +286,7 @@
 			);
 			name = BitMexCrypto;
 			productName = BitMexCrypto;
-			productReference = 7F1797392A7DB61700DE2F41 /* BitMexCrypto Debug.app */;
+			productReference = 7F1797392A7DB61700DE2F41 /* BitMexCrypto.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7F1797482A7DB61900DE2F41 /* BitMexCryptoTests */ = {
@@ -496,6 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -551,6 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -572,7 +574,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BitMexCrypto/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "BitMexCrypto/App//Resources/Info.plist";
+				INFOPLIST_FILE = "BitMexCrypto//App/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -587,7 +589,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(APP_NAME)";
+				PRODUCT_NAME = BitMexCrypto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -608,7 +610,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BitMexCrypto/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "BitMexCrypto/App//Resources/Info.plist";
+				INFOPLIST_FILE = "BitMexCrypto//App/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -623,7 +625,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(APP_NAME)";
+				PRODUCT_NAME = BitMexCrypto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

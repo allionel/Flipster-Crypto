@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    let stream: WebSocketStream = .init(url: "wss://ws.bitmex.com/realtime?subscribe=instrument,orderBookL2_25:XBTUSD")
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,6 +17,15 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .task {
+            do {
+                for try await message in stream {
+                    Debugger.print(message)
+                }
+            } catch {
+                debugPrint("Oops something didn't go right")
+            }
+        }
     }
 }
 

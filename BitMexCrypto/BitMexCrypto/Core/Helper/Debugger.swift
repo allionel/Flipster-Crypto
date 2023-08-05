@@ -20,8 +20,8 @@ public struct Debugger {
     
     public static func print(_ arg: Any..., type: PrintType = .info) {
     #if DEBUG
-        let stringLiteral = arg.reduce("") { $0 + " \($1)" }
-        Swift.debugPrint("@@@ \(type.text): -->\(stringLiteral)")
+        var message = "@@@ \(type.text): -->\(arg)"
+        Swift.print(message)
     #endif
     }
 }
