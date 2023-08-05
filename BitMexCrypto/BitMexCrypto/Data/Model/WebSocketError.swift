@@ -13,8 +13,8 @@ public enum WebSocketError: Error {
     case failToSendMessage
     case decodingFialed
     case encodingFialed
-    case stringToDataConvertingFaild
-    case dataToStringConvertingFaild
+    case stringToDataConvertingFailed
+    case dataToStringConvertingFailed
     case failedReturnExpectedData 
     case unkown
     case notDefined(String)

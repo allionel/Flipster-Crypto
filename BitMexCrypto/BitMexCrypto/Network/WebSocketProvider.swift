@@ -17,17 +17,19 @@ protocol WebSocketProvider {
     func unsubscribe(from topics: [SubscriptionTopic: String]) async throws
 }
 
+protocol WebSocketMessaging {
+    associatedtype DataType
+    func requestString(_ operation: BitMexOperation, topics: [SubscriptionTopic: String]) throws -> String
+    func requestData(_ operation: BitMexOperation, topics: [SubscriptionTopic: String]) throws -> DataType
+}
+
 final class BitMexWebSocket<Provider: WebSocketStream> where Provider.Element == SocketElement {
+    typealias DataType = Encodable
+    
     fileprivate let webSocketStream: Provider
     
     init(webSocketStream: Provider) {
         self.webSocketStream = webSocketStream
-    }
-    
-    fileprivate func request(_ operation: BitMexOperation, topics: [SubscriptionTopic: String]) throws -> String {
-        let args = topics.map { "\($0):\($1)" }
-        let request = SocketRequest(op: operation, args: args)
-        return try request.jsonString()
     }
     
     fileprivate func socketStreamIteratedOutput<T: Decodable>(by message: String) async throws -> Future<T, WebSocketError>? {
@@ -56,7 +58,7 @@ final class BitMexWebSocket<Provider: WebSocketStream> where Provider.Element ==
 extension BitMexWebSocket: WebSocketProvider {
     func subscribe<T: Decodable>(to topics: [SubscriptionTopic : String]) async -> Future<T, WebSocketError>? {
         do {
-            let message = try request(.subscribe, topics: topics)
+            let message = try requestString(.subscribe, topics: topics)
             try await webSocketStream.sendMessage(message)
             Debugger.print("Socket subscribes to: ", topics)
             return try await socketStreamIteratedOutput(by: message)
@@ -70,7 +72,7 @@ extension BitMexWebSocket: WebSocketProvider {
     
     func unsubscribe(from topics: [SubscriptionTopic : String]) async throws {
         do {
-            let message = try request(.unsubscribe, topics: topics)
+            let message = try requestString(.unsubscribe, topics: topics)
             Task {
                 try await webSocketStream.sendMessage(message)
                 Debugger.print("Socket subscribes to: ", topics)
@@ -79,5 +81,19 @@ extension BitMexWebSocket: WebSocketProvider {
         } catch {
             throw error
         }
+    }
+}
+
+extension BitMexWebSocket: WebSocketMessaging {
+    func requestString(_ operation: BitMexOperation, topics: [SubscriptionTopic: String]) throws -> String {
+        let args = topics.map { "\($0):\($1)" }
+        let request = SocketRequest(op: operation, args: args)
+        return try request.jsonString()
+    }
+    
+    func requestData(_ operation: BitMexOperation, topics: [SubscriptionTopic: String]) throws -> DataType {
+        let args = topics.map { "\($0):\($1)" }
+        let request = SocketRequest(op: operation, args: args)
+        return request
     }
 }
