@@ -9,15 +9,19 @@ import Foundation
 
 public enum WebSocketStreamError: String, Error {
     case urlIsNotValid
-    case configurationIsNotInitialed
+    case configurationIsNotInitialized
     case failToSendMessage
     case decodingFialed
     case encodingFialed
+    case stringToDataConvertingFaild
+    case dataToStringConvertingFaild
     case unkown
 }
 
 extension WebSocketStreamError {
-    var description: String { rawValue }
+    var description: String {
+        rawValue.titleCase
+    }
 }
 
 extension Error where Self == WebSocketStreamError {

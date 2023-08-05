@@ -46,7 +46,7 @@ final class WebSocketStream: AsyncSequence {
     
     private func subscribeMessages() throws {
         guard let continuation else {
-            throw WebSocketStreamError.configurationIsNotInitialed
+            throw WebSocketStreamError.configurationIsNotInitialized
         }
         socket?.receive { [unowned self] result in
             switch result {

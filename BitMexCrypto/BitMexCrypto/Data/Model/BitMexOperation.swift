@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum BitMexOperation: String {
+public enum BitMexOperation: String, Encodable {
     case subscribe
     case unsubscribe
 }

@@ -20,7 +20,7 @@ public struct Debugger {
     
     public static func print(_ arg: Any..., type: PrintType = .info) {
     #if DEBUG
-        var message = "@@@ \(type.text): -->\(arg)"
+        let message = "@@@ \(type.text): -->\(arg)"
         Swift.print(message)
     #endif
     }

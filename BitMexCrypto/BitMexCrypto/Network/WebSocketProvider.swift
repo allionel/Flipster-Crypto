@@ -22,7 +22,7 @@ final class WebSocketManager {
     
     fileprivate func request(_ operation: BitMexOperation, topics: [SubscriptionTopic: String]) throws -> String {
         let args = topics.map { "\($0):\($1)" }
-        let request = SocketRequest(op: operation.rawValue, args: args)
+        let request = SocketRequest(op: operation, args: args)
         return try request.jsonString()
     }
 }
