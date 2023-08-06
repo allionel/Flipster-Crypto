@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubscriptionTopic: String, Decodable {
+public enum SubscriptionTopic: String, Decodable, Encodable {
     case orderBookL2
     case instrument
     case trade

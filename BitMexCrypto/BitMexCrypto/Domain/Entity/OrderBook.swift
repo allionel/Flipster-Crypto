@@ -7,17 +7,17 @@
 
 import Foundation
 
-public struct OrderBook: Decodable, Equatable {
-    public let table: SubscriptionTopic?
-    public let action: BitmexAction?
-    public let data: [OrderBookItem]?
+public struct OrderBook: Decodable, Equatable, Encodable {
+    public let table: SubscriptionTopic
+    public let action: BitmexAction
+    public let data: [OrderBookItem]
 }
 
-public struct OrderBookItem: Decodable {
+public struct OrderBookItem: Decodable, Encodable {
     public let symbol: String
     public let id: Int
     public let side: TradeSide
-    public let size: Int
+    public let size: Int?
     public let price: Double
     public let timestamp: Date
 }
@@ -28,7 +28,7 @@ extension OrderBookItem: Hashable {
     }
 
     public static func == (lhs: OrderBookItem, rhs: OrderBookItem) -> Bool {
-        lhs.hashValue == rhs.hashValue
+        lhs.id == rhs.id
     }
 }
 

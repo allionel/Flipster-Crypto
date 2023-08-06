@@ -12,13 +12,16 @@ public protocol OrderBookUseCase {
 //    associatedtype DataOutput
     func subscribeToOrderBookL2(with symbol: SubscriptionSymbol) throws
     func unsubscribeFromOrderBookL2(with symbol: SubscriptionSymbol) async throws
-    var messagePublisher: PassthroughSubject<OrderBook, Error> { get }
+    var messagePublisher: AnyPublisher<OrderBook, Never> { get }
 }
 
-public final class OrderBookUseCaseImp<Repository: OrderBookRepository> where Repository.DataOutput == OrderBook {
+public final class OrderBookUseCaseImp<Repository: OrderBookRepository>: ObservableObject where Repository.DataOutput == OrderBook {
     private let repository: Repository
     var bag: Set<AnyCancellable> = .init()
-    public var messagePublisher: PassthroughSubject<OrderBook, Error> = .init()
+    public var messagePublisher: AnyPublisher<OrderBook, Never> {
+        $msg.eraseToAnyPublisher()
+    }
+    @Published var msg: OrderBook = .empty
     public init(repository: Repository) {
         self.repository = repository
     }
@@ -26,15 +29,15 @@ public final class OrderBookUseCaseImp<Repository: OrderBookRepository> where Re
 
 extension OrderBookUseCaseImp: OrderBookUseCase {
     public func subscribeToOrderBookL2(with symbol: SubscriptionSymbol) throws {
-        Task {
+      
             try repository.subscribeToOrderBookL2(with: symbol.name)
             repository.messagePublisher.sink { res in
-                self.messagePublisher.send(completion: .failure(WebSocketError.unkown))
+                
             } receiveValue: { data in
-                self.messagePublisher.send(data)
+                self.msg = data
             }.store(in: &bag)
 
-        }
+       
         
     }
     

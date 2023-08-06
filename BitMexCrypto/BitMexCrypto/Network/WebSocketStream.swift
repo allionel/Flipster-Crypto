@@ -29,11 +29,12 @@ final class WebSocketManager {
     
     private lazy var stream: AsyncWebSocketStream = {
         return AsyncWebSocketStream { continuation in
+            Task { try await subscribeMessages() }
             self.continuation = continuation
             self.continuation?.onTermination = { @Sendable [socket] _ in
                 socket?.cancel()
             }
-            tryWithError(subscribeMessages)
+            
         }
     }()
     
@@ -52,26 +53,32 @@ final class WebSocketManager {
     }
     
     func makeAsyncIterator() -> AsyncIterator {
-        socket?.resume()
-        tryWithError(subscribeMessages)
+        
+        Task {
+            
+            try await subscribeMessages()
+        }
         return stream.makeAsyncIterator()
     }
-
-    private func subscribeMessages() throws {
+//  https://github.com/daltoniam/Starscream.git
+    private func subscribeMessages() async throws {
+        socket?.resume()
         guard let continuation else {
             throw WebSocketError.configurationIsNotInitialized
         }
         socket?.receive { [unowned self] result in
+            Task {  try await subscribeMessages() }
             switch result {
             case .success(let message):
-                print(message)
                 continuation.yield(message)
-                tryWithError(subscribeMessages)
             case .failure(let error):
                 continuation.finish(throwing: error)
             }
+            
         }
     }
+    
+    
 }
 
 extension WebSocketManager: WebSocketStream {

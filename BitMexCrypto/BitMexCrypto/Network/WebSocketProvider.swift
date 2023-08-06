@@ -18,7 +18,7 @@ public protocol WebSocketProvider {
     associatedtype Provider: AsyncSequence
     func subscribe(to topics: [SubscriptionTopic: String])  throws
     func unsubscribe(from topics: [SubscriptionTopic: String]) async throws
-    var messagePublisher: PassthroughSubject<DataOutput, Error> { get }
+    var messagePublisher: AnyPublisher<DataOutput, Never> { get }
 }
 
 protocol WebSocketMessaging {
@@ -27,28 +27,35 @@ protocol WebSocketMessaging {
     func requestData(_ operation: BitMexOperation, topics: [SubscriptionTopic: String]) -> Data
 }
 
-final class BitMexWebSocket<Provider: WebSocketStream, DataOutput: Decodable> where Provider.Element == SocketElement {
+final class BitMexWebSocket<Provider: WebSocketStream, DataOutput: Decodable>: ObservableObject where Provider.Element == SocketElement {
     typealias DataType = Encodable
 //    typealias DataOutput = Decodable
     fileprivate let webSocketStream: Provider
-    var messagePublisher: PassthroughSubject<DataOutput, Error> = .init()
+    var messagePublisher: AnyPublisher<DataOutput, Never> {
+        $msg.compactMap{$0}.filter{($0 as! OrderBook).action != .delete} .eraseToAnyPublisher()
+    }
+    @Published var msg: DataOutput? = .empty
     init(webSocketStream: Provider) {
         self.webSocketStream = webSocketStream
         
     }
     
     private func listenToMessage() async throws {
-        for try await message in webSocketStream {
+        for try await message in webSocketStream.dropFirst(2){
             switch message {
             case .string(let message):
-                print(message)
-                let data: DataOutput = try message.modelObject()
-                messagePublisher.send(data)
+                do {
+                    let data: DataOutput = try message.modelObject()
+                    msg = data
+                } catch {
+                    print(error)
+                }
+                
             case .data(let data):
                 let data: DataOutput = try data.jsonString().modelObject()
-                messagePublisher.send(data)
+                msg = data
             default:
-                messagePublisher.send(completion: .failure(WebSocketError.decodingFialed))
+                break
             }
         }
     }
