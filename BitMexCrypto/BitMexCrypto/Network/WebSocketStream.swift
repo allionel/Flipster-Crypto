@@ -12,7 +12,7 @@ typealias SocketElement = URLSessionWebSocketTask.Message
 protocol WebSocketStream: AsyncSequence {
     associatedtype Element
     func sendMessage(_ message: String) async throws
-    func sendData<T: Encodable>(_ data: T) async throws
+    func sendData(_ data: Data) async throws
     func connect() async
     func suspend()
     func disconnect()
@@ -82,15 +82,11 @@ extension WebSocketManager: WebSocketStream {
         }
     }
     
-    func sendData<T: Encodable>(_ data: T) async throws {
-//        Task {
-            let string = try data.jsonString()
-            guard let data = string.data(using: .utf8) else {
-                throw WebSocketError.stringToDataConvertingFailed
-            }
+    func sendData(_ data: Data) async throws {
+        Task {
             let socketData = Element.data(data)
             try await socket?.send(socketData)
-//        }
+        }
     }
     
     func connect() {
