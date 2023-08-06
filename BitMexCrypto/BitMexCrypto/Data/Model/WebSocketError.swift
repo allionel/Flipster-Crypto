@@ -15,16 +15,18 @@ public enum WebSocketError: Error {
     case encodingFialed
     case stringToDataConvertingFailed
     case dataToStringConvertingFailed
-    case failedReturnExpectedData 
+    case failedReturnExpectedData
+    case socketStreamIsNotReady
+    case streamHasBeenCompleted
     case unkown
-    case notDefined(String)
+    case notDefined(Any)
 }
 
 extension WebSocketError {
     var description: String {
         switch self {
-        case .notDefined(let text):
-            return text
+        case .notDefined(let data):
+            return String(describing: data)
         default:
             return String(describing: self)
         }
@@ -33,7 +35,7 @@ extension WebSocketError {
 
 extension Error {
     public var asWebSocketError: WebSocketError {
-        (self as? WebSocketError) ?? .notDefined(self.localizedDescription)
+        (self as? WebSocketError) ?? .notDefined(self)
     }
 }
 extension Error where Self == WebSocketError {

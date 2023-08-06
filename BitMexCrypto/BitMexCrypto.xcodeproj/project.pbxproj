@@ -32,6 +32,8 @@
 		7F3E39DF2A7E4A2300968CDB /* TradeSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39DE2A7E4A2300968CDB /* TradeSide.swift */; };
 		7F3E39E12A7E4A5C00968CDB /* RecentTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E02A7E4A5C00968CDB /* RecentTrade.swift */; };
 		7F3E39E32A7E53AA00968CDB /* Subscribers+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */; };
+		7F3E39E72A7E870200968CDB /* OrderBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */; };
+		7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E82A7E8D6600968CDB /* SubscriptionSymbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		7F3E39DE2A7E4A2300968CDB /* TradeSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeSide.swift; sourceTree = "<group>"; };
 		7F3E39E02A7E4A5C00968CDB /* RecentTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTrade.swift; sourceTree = "<group>"; };
 		7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subscribers+Extension.swift"; sourceTree = "<group>"; };
+		7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookUseCase.swift; sourceTree = "<group>"; };
+		7F3E39E82A7E8D6600968CDB /* SubscriptionSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionSymbol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				7F1797772A7DC3E600DE2F41 /* Entity */,
-				7F1797742A7DBF1800DE2F41 /* Repository */,
+				7F3E39E52A7E86DE00968CDB /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -205,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				7F1797732A7DBF1100DE2F41 /* Model */,
+				7F1797742A7DBF1800DE2F41 /* Repository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -242,7 +247,9 @@
 		7F1797732A7DBF1100DE2F41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7F1797812A7DC5DB00DE2F41 /* SocketRequest.swift */,
 				7F1797832A7DC60A00DE2F41 /* SubscriptionTopic.swift */,
+				7F3E39E82A7E8D6600968CDB /* SubscriptionSymbol.swift */,
 				7F3E39D12A7E3A5C00968CDB /* BitMexAction.swift */,
 				7F1797852A7DC62A00DE2F41 /* BitMexOperation.swift */,
 				7F1797782A7DC3FE00DE2F41 /* WebSocketError.swift */,
@@ -279,7 +286,6 @@
 		7F1797772A7DC3E600DE2F41 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				7F1797812A7DC5DB00DE2F41 /* SocketRequest.swift */,
 				7F3E39CF2A7E39BE00968CDB /* Instrument.swift */,
 				7F3E39DC2A7E47DB00968CDB /* OrderBook.swift */,
 				7F3E39E02A7E4A5C00968CDB /* RecentTrade.swift */,
@@ -305,6 +311,14 @@
 				7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7F3E39E52A7E86DE00968CDB /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,10 +460,12 @@
 				7F3E39E12A7E4A5C00968CDB /* RecentTrade.swift in Sources */,
 				7F1797862A7DC62A00DE2F41 /* BitMexOperation.swift in Sources */,
 				7F1797842A7DC60A00DE2F41 /* SubscriptionTopic.swift in Sources */,
+				7F3E39E72A7E870200968CDB /* OrderBookUseCase.swift in Sources */,
 				7F3E39D22A7E3A5C00968CDB /* BitMexAction.swift in Sources */,
 				7F1797712A7DB9BD00DE2F41 /* Configuration.swift in Sources */,
 				7F17973F2A7DB61800DE2F41 /* ContentView.swift in Sources */,
 				7F3E39D52A7E3D8900968CDB /* Formatter+Extension.swift in Sources */,
+				7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */,
 				7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */,
 				7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */,
 				7F3E39DB2A7E478000968CDB /* OrderBookRepository.swift in Sources */,

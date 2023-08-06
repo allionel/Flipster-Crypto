@@ -8,8 +8,8 @@
 import Foundation
 
 public enum TradeSide: String, Decodable {
-    case buy
-    case sell
+    case buy = "Buy"
+    case sell = "Sell"
     
     public var title: String {
         rawValue.capitalized

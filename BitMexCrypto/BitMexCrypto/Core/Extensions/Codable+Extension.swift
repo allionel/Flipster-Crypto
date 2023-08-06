@@ -10,7 +10,7 @@ import Foundation
 extension Encodable {
     public func jsonString() throws -> String {
         let encoder: JSONEncoder = .init()
-        encoder.outputFormatting = .prettyPrinted
+        encoder.outputFormatting = .withoutEscapingSlashes
         encoder.dateEncodingStrategy = .iso8601withFractionalSeconds
         do {
             let encoded = try encoder.encode(self)

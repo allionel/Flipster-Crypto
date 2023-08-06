@@ -23,9 +23,19 @@ final class WebSocketManager {
     typealias AsyncWebSocketStream = AsyncThrowingStream<Element, Error>
     typealias AsyncIterator = AsyncWebSocketStream.Iterator
     
-    private var stream: AsyncWebSocketStream?
+//    private var stream: AsyncWebSocketStream?
     private var continuation: AsyncWebSocketStream.Continuation?
     private var socket: URLSessionWebSocketTask?
+    
+    private lazy var stream: AsyncWebSocketStream = {
+        return AsyncWebSocketStream { continuation in
+            self.continuation = continuation
+            self.continuation?.onTermination = { @Sendable [socket] _ in
+                socket?.cancel()
+            }
+            tryWithError(subscribeMessages)
+        }
+    }()
     
     init(url: String, session: URLSession = URLSession.shared) {
         guard let url = URL(string: url) else {
@@ -42,9 +52,6 @@ final class WebSocketManager {
     }
     
     func makeAsyncIterator() -> AsyncIterator {
-        guard let stream else {
-            fatalError("stream was not initialized")
-        }
         socket?.resume()
         tryWithError(subscribeMessages)
         return stream.makeAsyncIterator()
@@ -57,6 +64,7 @@ final class WebSocketManager {
         socket?.receive { [unowned self] result in
             switch result {
             case .success(let message):
+                print(message)
                 continuation.yield(message)
                 tryWithError(subscribeMessages)
             case .failure(let error):
@@ -68,17 +76,21 @@ final class WebSocketManager {
 
 extension WebSocketManager: WebSocketStream {
     func sendMessage(_ message: String) async throws {
-        let socketMessage = Element.string(message)
-        try await socket?.send(socketMessage)
+        Task {
+            let socketMessage = Element.string(message)
+            try await socket?.send(socketMessage)
+        }
     }
     
     func sendData<T: Encodable>(_ data: T) async throws {
-        let string = try data.jsonString()
-        guard let data = string.data(using: .utf8) else {
-            throw WebSocketError.stringToDataConvertingFailed
-        }
-        let socketData = Element.data(data)
-        try await socket?.send(socketData)
+//        Task {
+            let string = try data.jsonString()
+            guard let data = string.data(using: .utf8) else {
+                throw WebSocketError.stringToDataConvertingFailed
+            }
+            let socketData = Element.data(data)
+            try await socket?.send(socketData)
+//        }
     }
     
     func connect() {

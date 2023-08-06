@@ -11,7 +11,7 @@ extension Subscribers.Completion where Failure == WebSocketError {
     public var error: WebSocketError {
         switch self {
         case .finished:
-            return .unkown
+            return .streamHasBeenCompleted
         case .failure(let error):
             return error
         }

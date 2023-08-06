@@ -8,9 +8,9 @@
 import Foundation
 
 public struct OrderBook: Decodable, Equatable {
-    public let table: SubscriptionTopic
-    public let action: BitmexAction
-    public let data: [OrderBookItem]
+    public let table: SubscriptionTopic?
+    public let action: BitmexAction?
+    public let data: [OrderBookItem]?
 }
 
 public struct OrderBookItem: Decodable {
