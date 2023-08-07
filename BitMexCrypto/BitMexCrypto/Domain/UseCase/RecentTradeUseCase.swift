@@ -34,10 +34,10 @@ extension RecentTradeUseCaseImp: RecentTradeUseCase {
         } receiveValue: { [weak self] in
             self?.messageSender.send($0)
         }.store(in: &canellables)
-        try await repository.subscribeToOrderBookL2(with: symbol.name)
+        try await repository.subscribeToTrade(with: symbol.name)
     }
     
     public func unsubscribeFromTrade(with symbol: SubscriptionSymbol) async throws {
-        try await repository.unsubscribeFromOrderBookL2(with: symbol.name)
+        try await repository.unsubscribeFromTrade(with: symbol.name)
     }
 }

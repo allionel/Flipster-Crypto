@@ -13,7 +13,7 @@ protocol WebSocketStream: AsyncSequence {
     associatedtype Element
     func sendMessage(_ message: String) async throws
     func sendData(_ data: Data) async throws
-    func connect() async
+    func connect()
     func suspend()
     func disconnect()
 }
@@ -57,6 +57,7 @@ final class WebSocketManager {
         socket?.receive { [unowned self] result in
             switch result {
             case .success(let message):
+                print(message)
                 continuation.yield(message)
                 Task { try await subscribeMessages() }
             case .failure(let error):
@@ -75,8 +76,10 @@ extension WebSocketManager: WebSocketStream {
     }
     
     func sendData(_ data: Data) async throws {
-        let socketData = Element.data(data)
-        try await socket?.send(socketData)
+        Task {
+            let socketData = Element.data(data)
+            try await socket?.send(socketData)
+        }
     }
     
     func connect() {

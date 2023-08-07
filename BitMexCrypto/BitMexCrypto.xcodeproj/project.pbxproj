@@ -41,6 +41,17 @@
 		7F3E39F42A816AD300968CDB /* UseCaseDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */; };
 		7F3E39F62A817DD600968CDB /* RecentTradeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F52A817DD600968CDB /* RecentTradeUseCase.swift */; };
 		7F3E39F82A817DE300968CDB /* RecentTradeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F72A817DE300968CDB /* RecentTradeRepository.swift */; };
+		7F3E39FA2A819E6400968CDB /* OrderBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F92A819E6400968CDB /* OrderBookView.swift */; };
+		7F3E39FD2A819EA600968CDB /* OrderBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39FC2A819EA600968CDB /* OrderBookList.swift */; };
+		7F3E3A012A819ECD00968CDB /* OrderBookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */; };
+		7F3E3A032A81A64D00968CDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A022A81A64D00968CDB /* Colors.xcassets */; };
+		7F3E3A062A81A9D900968CDB /* Color+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A052A81A9D900968CDB /* Color+Constants.swift */; };
+		7F3E3A082A81A9F900968CDB /* Font+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A072A81A9F900968CDB /* Font+Constants.swift */; };
+		7F3E3A0A2A81AA0800968CDB /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A092A81AA0800968CDB /* Color+Extension.swift */; };
+		7F3E3A0C2A81AA4900968CDB /* CGFloat+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */; };
+		7F3E3A0F2A81AB9500968CDB /* OrderBookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A0E2A81AB9500968CDB /* OrderBookItem.swift */; };
+		7F3E3A112A81ACB600968CDB /* Strings+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A102A81ACB600968CDB /* Strings+Extension.swift */; };
+		7F3E3A132A81ACE100968CDB /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A122A81ACE100968CDB /* Number+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +112,17 @@
 		7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDependencyContainer.swift; sourceTree = "<group>"; };
 		7F3E39F52A817DD600968CDB /* RecentTradeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeUseCase.swift; sourceTree = "<group>"; };
 		7F3E39F72A817DE300968CDB /* RecentTradeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeRepository.swift; sourceTree = "<group>"; };
+		7F3E39F92A819E6400968CDB /* OrderBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookView.swift; sourceTree = "<group>"; };
+		7F3E39FC2A819EA600968CDB /* OrderBookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookList.swift; sourceTree = "<group>"; };
+		7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookRow.swift; sourceTree = "<group>"; };
+		7F3E3A022A81A64D00968CDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		7F3E3A052A81A9D900968CDB /* Color+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A072A81A9F900968CDB /* Font+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A092A81AA0800968CDB /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A0E2A81AB9500968CDB /* OrderBookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookItem.swift; sourceTree = "<group>"; };
+		7F3E3A102A81ACB600968CDB /* Strings+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A122A81ACE100968CDB /* Number+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +221,9 @@
 		7F1797672A7DB83600DE2F41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7F3E3A0D2A81AB7800968CDB /* Model */,
+				7F3E39FB2A819E9600968CDB /* Components */,
+				7F3E39F92A819E6400968CDB /* OrderBookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +270,7 @@
 			children = (
 				7F1797722A7DBC1800DE2F41 /* Info.plist */,
 				7F1797402A7DB61900DE2F41 /* Assets.xcassets */,
+				7F3E3A022A81A64D00968CDB /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -284,6 +310,7 @@
 		7F1797752A7DC38D00DE2F41 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7F3E3A042A81A9C100968CDB /* Constants */,
 				7F3E39D32A7E3D7C00968CDB /* Extensions */,
 				7F17977C2A7DC48D00DE2F41 /* Helper */,
 			);
@@ -327,6 +354,7 @@
 				7F3E39D42A7E3D8900968CDB /* Formatter+Extension.swift */,
 				7F3E39D82A7E44A900968CDB /* String+Extension.swift */,
 				7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */,
+				7F3E3A092A81AA0800968CDB /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +376,35 @@
 				7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		7F3E39FB2A819E9600968CDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39FC2A819EA600968CDB /* OrderBookList.swift */,
+				7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7F3E3A042A81A9C100968CDB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A052A81A9D900968CDB /* Color+Constants.swift */,
+				7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */,
+				7F3E3A102A81ACB600968CDB /* Strings+Extension.swift */,
+				7F3E3A072A81A9F900968CDB /* Font+Constants.swift */,
+				7F3E3A122A81ACE100968CDB /* Number+Extension.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		7F3E3A0D2A81AB7800968CDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A0E2A81AB9500968CDB /* OrderBookItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +511,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3E3A032A81A64D00968CDB /* Colors.xcassets in Resources */,
 				7F1797442A7DB61900DE2F41 /* Preview Assets.xcassets in Resources */,
 				7F1797412A7DB61900DE2F41 /* Assets.xcassets in Resources */,
 			);
@@ -481,6 +539,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3E39D72A7E407200968CDB /* Codable+Extension.swift in Sources */,
+				7F3E3A0A2A81AA0800968CDB /* Color+Extension.swift in Sources */,
+				7F3E3A062A81A9D900968CDB /* Color+Constants.swift in Sources */,
 				7F3E39E32A7E53AA00968CDB /* Subscribers+Extension.swift in Sources */,
 				7F3E39DF2A7E4A2300968CDB /* TradeSide.swift in Sources */,
 				7F3E39F82A817DE300968CDB /* RecentTradeRepository.swift in Sources */,
@@ -492,19 +552,27 @@
 				7F1797842A7DC60A00DE2F41 /* SubscriptionTopic.swift in Sources */,
 				7F3E39F62A817DD600968CDB /* RecentTradeUseCase.swift in Sources */,
 				7F3E39E72A7E870200968CDB /* OrderBookUseCase.swift in Sources */,
+				7F3E3A012A819ECD00968CDB /* OrderBookRow.swift in Sources */,
 				7F3E39D22A7E3A5C00968CDB /* BitMexAction.swift in Sources */,
 				7F1797712A7DB9BD00DE2F41 /* Configuration.swift in Sources */,
+				7F3E3A082A81A9F900968CDB /* Font+Constants.swift in Sources */,
+				7F3E3A0F2A81AB9500968CDB /* OrderBookItem.swift in Sources */,
 				7F17973F2A7DB61800DE2F41 /* ContentView.swift in Sources */,
 				7F3E39F42A816AD300968CDB /* UseCaseDependencyContainer.swift in Sources */,
+				7F3E3A132A81ACE100968CDB /* Number+Extension.swift in Sources */,
+				7F3E39FA2A819E6400968CDB /* OrderBookView.swift in Sources */,
 				7F3E39D52A7E3D8900968CDB /* Formatter+Extension.swift in Sources */,
 				7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */,
 				7F3E39EB2A8157EA00968CDB /* CancellableBagHolder.swift in Sources */,
 				7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */,
 				7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */,
 				7F3E39DB2A7E478000968CDB /* OrderBookRepository.swift in Sources */,
+				7F3E3A112A81ACB600968CDB /* Strings+Extension.swift in Sources */,
 				7F3E39D02A7E39BE00968CDB /* Instrument.swift in Sources */,
 				7F3E39F22A816A8C00968CDB /* RepositoryDependencyContainer.swift in Sources */,
 				7F1797792A7DC3FE00DE2F41 /* WebSocketError.swift in Sources */,
+				7F3E3A0C2A81AA4900968CDB /* CGFloat+Constants.swift in Sources */,
+				7F3E39FD2A819EA600968CDB /* OrderBookList.swift in Sources */,
 				7F3E39D92A7E44A900968CDB /* String+Extension.swift in Sources */,
 				7F3E39EE2A81693800968CDB /* DependencyContainer.swift in Sources */,
 				7F3E39F02A81696F00968CDB /* Singleton.swift in Sources */,

@@ -15,3 +15,9 @@ public enum TradeSide: String, Decodable , Encodable{
         rawValue.capitalized
     }
 }
+
+extension TradeSide {
+    public var isBuy: Bool {
+        self == .buy
+    }
+}

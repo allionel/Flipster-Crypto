@@ -13,26 +13,28 @@ public struct RecentTrade: Decodable, Equatable {
     public let data: [RecentTradeItem]
 }
 
-public struct RecentTradeItem: Decodable {
-    public let timestamp: Date
-    public let symbol: String
-    public let side: TradeSide
-    public let size: Int
-    public let price: Double
-    public let tickDirection: String
-    public let trdMatchID: String
-    public let grossValue: Int
-    public let homeNotional: Double
-    public let foreignNotional: Double
-    public let trdType: String
+extension RecentTrade {
+    public struct RecentTradeItem: Decodable {
+        public let timestamp: Date
+        public let symbol: String
+        public let side: TradeSide
+        public let size: Int
+        public let price: Double
+        public let tickDirection: String
+        public let trdMatchID: String
+        public let grossValue: Int
+        public let homeNotional: Double
+        public let foreignNotional: Double
+        public let trdType: String
+    }
 }
 
-extension RecentTradeItem: Hashable {
+extension RecentTrade.RecentTradeItem: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(trdMatchID)
     }
     
-    public static func == (lhs: RecentTradeItem, rhs: RecentTradeItem) -> Bool {
+    public static func == (lhs: RecentTrade.RecentTradeItem, rhs: RecentTrade.RecentTradeItem) -> Bool {
         lhs.hashValue == rhs.hashValue
     }
 }
