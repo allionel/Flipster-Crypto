@@ -17,4 +17,8 @@ final class UseCaseDependencyContainer {
     lazy var orderBook: OrderBookUseCase = {
         return OrderBookUseCaseImp(repository: repositories.orderBook)
     }()
+    
+    lazy var recentTrade: RecentTradeUseCase = {
+        return RecentTradeUseCaseImp(repository: repositories.recentTrade)
+    }()
 }
