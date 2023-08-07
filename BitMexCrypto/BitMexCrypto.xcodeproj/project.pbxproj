@@ -35,6 +35,10 @@
 		7F3E39E72A7E870200968CDB /* OrderBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */; };
 		7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E82A7E8D6600968CDB /* SubscriptionSymbol.swift */; };
 		7F3E39EB2A8157EA00968CDB /* CancellableBagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39EA2A8157EA00968CDB /* CancellableBagHolder.swift */; };
+		7F3E39EE2A81693800968CDB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39ED2A81693800968CDB /* DependencyContainer.swift */; };
+		7F3E39F02A81696F00968CDB /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39EF2A81696F00968CDB /* Singleton.swift */; };
+		7F3E39F22A816A8C00968CDB /* RepositoryDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F12A816A8C00968CDB /* RepositoryDependencyContainer.swift */; };
+		7F3E39F42A816AD300968CDB /* UseCaseDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookUseCase.swift; sourceTree = "<group>"; };
 		7F3E39E82A7E8D6600968CDB /* SubscriptionSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionSymbol.swift; sourceTree = "<group>"; };
 		7F3E39EA2A8157EA00968CDB /* CancellableBagHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableBagHolder.swift; sourceTree = "<group>"; };
+		7F3E39ED2A81693800968CDB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		7F3E39EF2A81696F00968CDB /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		7F3E39F12A816A8C00968CDB /* RepositoryDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependencyContainer.swift; sourceTree = "<group>"; };
+		7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +220,7 @@
 			children = (
 				7F1797732A7DBF1100DE2F41 /* Model */,
 				7F1797742A7DBF1800DE2F41 /* Repository */,
+				7F3E39EC2A81690F00968CDB /* Factories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -299,8 +308,9 @@
 		7F17977C2A7DC48D00DE2F41 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				7F17977D2A7DC4CE00DE2F41 /* Debugger.swift */,
+				7F3E39EF2A81696F00968CDB /* Singleton.swift */,
 				7F3E39EA2A8157EA00968CDB /* CancellableBagHolder.swift */,
+				7F17977D2A7DC4CE00DE2F41 /* Debugger.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -322,6 +332,16 @@
 				7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		7F3E39EC2A81690F00968CDB /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39ED2A81693800968CDB /* DependencyContainer.swift */,
+				7F3E39F12A816A8C00968CDB /* RepositoryDependencyContainer.swift */,
+				7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +487,7 @@
 				7F3E39D22A7E3A5C00968CDB /* BitMexAction.swift in Sources */,
 				7F1797712A7DB9BD00DE2F41 /* Configuration.swift in Sources */,
 				7F17973F2A7DB61800DE2F41 /* ContentView.swift in Sources */,
+				7F3E39F42A816AD300968CDB /* UseCaseDependencyContainer.swift in Sources */,
 				7F3E39D52A7E3D8900968CDB /* Formatter+Extension.swift in Sources */,
 				7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */,
 				7F3E39EB2A8157EA00968CDB /* CancellableBagHolder.swift in Sources */,
@@ -474,8 +495,11 @@
 				7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */,
 				7F3E39DB2A7E478000968CDB /* OrderBookRepository.swift in Sources */,
 				7F3E39D02A7E39BE00968CDB /* Instrument.swift in Sources */,
+				7F3E39F22A816A8C00968CDB /* RepositoryDependencyContainer.swift in Sources */,
 				7F1797792A7DC3FE00DE2F41 /* WebSocketError.swift in Sources */,
 				7F3E39D92A7E44A900968CDB /* String+Extension.swift in Sources */,
+				7F3E39EE2A81693800968CDB /* DependencyContainer.swift in Sources */,
+				7F3E39F02A81696F00968CDB /* Singleton.swift in Sources */,
 				7F17973D2A7DB61700DE2F41 /* BitMexCryptoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

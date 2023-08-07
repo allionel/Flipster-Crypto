@@ -34,7 +34,7 @@ struct ContentView_Previews: PreviewProvider {
 
 @MainActor
 final class ViewModel: ObservableObject {
-    let useCase: OrderBookUseCase = OrderBookUseCaseImp(repository: OrderBookRepositoryImp(provider: BitMexWebSocket(webSocketStream: WebSocketManager(url: Configuration.shared.baseURL))))
+    let useCase: OrderBookUseCase = DependencyContainer.shared.useCases.orderBook
     private var bag: Set<AnyCancellable> = .init()
     
     @Published var data: [OrderBookItem]? = []
