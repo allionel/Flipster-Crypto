@@ -9,36 +9,32 @@ import Foundation
 import Combine
 
 public protocol OrderBookUseCase {
-//    associatedtype DataOutput
-    func subscribeToOrderBookL2(with symbol: SubscriptionSymbol) throws
+    func subscribeToOrderBookL2(with symbol: SubscriptionSymbol) async throws
     func unsubscribeFromOrderBookL2(with symbol: SubscriptionSymbol) async throws
-    var messagePublisher: AnyPublisher<OrderBook, Never> { get }
+    var messagePublisher: AnyPublisher<OrderBook, WebSocketError> { get }
 }
 
-public final class OrderBookUseCaseImp<Repository: OrderBookRepository>: ObservableObject where Repository.DataOutput == OrderBook {
+public final class OrderBookUseCaseImp<Repository: OrderBookRepository>: CancellableBagHolder where Repository.DataOutput == OrderBook {
     private let repository: Repository
-    var bag: Set<AnyCancellable> = .init()
-    public var messagePublisher: AnyPublisher<OrderBook, Never> {
-        $msg.eraseToAnyPublisher()
+    private let messageSender: PassthroughSubject<OrderBook, WebSocketError> = .init()
+    
+    public var canellables: Set<AnyCancellable> = .init()
+    public var messagePublisher: AnyPublisher<OrderBook, WebSocketError> {
+        messageSender.eraseToAnyPublisher()
     }
-    @Published var msg: OrderBook = .empty
     public init(repository: Repository) {
         self.repository = repository
     }
 }
 
 extension OrderBookUseCaseImp: OrderBookUseCase {
-    public func subscribeToOrderBookL2(with symbol: SubscriptionSymbol) throws {
-      
-            try repository.subscribeToOrderBookL2(with: symbol.name)
-            repository.messagePublisher.sink { res in
-                
-            } receiveValue: { data in
-                self.msg = data
-            }.store(in: &bag)
-
-       
-        
+    public func subscribeToOrderBookL2(with symbol: SubscriptionSymbol) async throws {
+        repository.messagePublisher.sink { [weak self] in
+            self?.messageSender.send(completion: .failure($0.error))
+        } receiveValue: { [weak self] in
+            self?.messageSender.send($0)
+        }.store(in: &canellables)
+        try await repository.subscribeToOrderBookL2(with: symbol.name)
     }
     
     public func unsubscribeFromOrderBookL2(with symbol: SubscriptionSymbol) async throws {

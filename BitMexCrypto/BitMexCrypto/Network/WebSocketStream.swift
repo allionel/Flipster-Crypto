@@ -23,20 +23,9 @@ final class WebSocketManager {
     typealias AsyncWebSocketStream = AsyncThrowingStream<Element, Error>
     typealias AsyncIterator = AsyncWebSocketStream.Iterator
     
-//    private var stream: AsyncWebSocketStream?
+    private var stream: AsyncWebSocketStream?
     private var continuation: AsyncWebSocketStream.Continuation?
     private var socket: URLSessionWebSocketTask?
-    
-    private lazy var stream: AsyncWebSocketStream = {
-        return AsyncWebSocketStream { continuation in
-            Task { try await subscribeMessages() }
-            self.continuation = continuation
-            self.continuation?.onTermination = { @Sendable [socket] _ in
-                socket?.cancel()
-            }
-            
-        }
-    }()
     
     init(url: String, session: URLSession = URLSession.shared) {
         guard let url = URL(string: url) else {
@@ -53,32 +42,28 @@ final class WebSocketManager {
     }
     
     func makeAsyncIterator() -> AsyncIterator {
-        
-        Task {
-            
-            try await subscribeMessages()
+        guard let stream = stream else {
+            fatalError("stream was not initialized")
         }
+        socket?.resume()
+        Task { try await subscribeMessages() }
         return stream.makeAsyncIterator()
     }
-//  https://github.com/daltoniam/Starscream.git
+    
     private func subscribeMessages() async throws {
-        socket?.resume()
         guard let continuation else {
             throw WebSocketError.configurationIsNotInitialized
         }
         socket?.receive { [unowned self] result in
-            Task {  try await subscribeMessages() }
             switch result {
             case .success(let message):
                 continuation.yield(message)
+                Task { try await subscribeMessages() }
             case .failure(let error):
                 continuation.finish(throwing: error)
             }
-            
         }
     }
-    
-    
 }
 
 extension WebSocketManager: WebSocketStream {
@@ -90,10 +75,8 @@ extension WebSocketManager: WebSocketStream {
     }
     
     func sendData(_ data: Data) async throws {
-        Task {
-            let socketData = Element.data(data)
-            try await socket?.send(socketData)
-        }
+        let socketData = Element.data(data)
+        try await socket?.send(socketData)
     }
     
     func connect() {

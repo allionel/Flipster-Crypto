@@ -17,6 +17,7 @@ public enum WebSocketError: Error {
     case dataToStringConvertingFailed
     case failedReturnExpectedData
     case socketStreamIsNotReady
+    case socketMessageIsUndefined
     case streamHasBeenCompleted
     case unkown
     case notDefined(Any)

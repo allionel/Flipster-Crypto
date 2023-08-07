@@ -40,30 +40,30 @@ final class ViewModel: ObservableObject {
     @Published var data: [OrderBookItem]? = []
     
     init() {
-        
+        useCase.messagePublisher
+            .receive(on: DispatchQueue.main)
+            .sink {
+                switch $0 {
+                case .finished:
+                    print("fin")
+                case .failure(let error):
+                    print(error)
+                }
+                debugPrint($0)
+            } receiveValue: { book in
+                print(book)
+            }.store(in: &bag)
         subscribe()
     }
     func subscribe() {
-//        Task {
+        Task {
         do {
-            try useCase.subscribeToOrderBookL2(with: .xbtusd)
-            useCase.messagePublisher
-                .receive(on: DispatchQueue.main)
-                .sink {
-                    switch $0 {
-                    case .finished:
-                        print("fin")
-                    case .failure(let error):
-                        print(error)
-                    }
-                    debugPrint($0)
-                } receiveValue: { book in
-                    print(book)
-                }.store(in: &bag)
+            try await useCase.subscribeToOrderBookL2(with: .xbtusd)
+            
         } catch {
             print(error)
         }
             
-//        }
+        }
     }
 }

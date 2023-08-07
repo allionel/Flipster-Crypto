@@ -38,9 +38,4 @@ extension String {
             throw error
         }
     }
-
-}
-
-extension Decodable {
-    static var empty: Self { try! OrderBook(table: .orderBookL2, action: .partial, data: []).jsonString().modelObject() }
 }
