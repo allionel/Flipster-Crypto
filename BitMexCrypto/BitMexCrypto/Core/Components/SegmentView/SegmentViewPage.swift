@@ -27,7 +27,7 @@ struct SegmentViewPage: View {
 struct SegmentViewPage_Previews: PreviewProvider {
     static var previews: some View {
         SegmentViewPage(tabs: [
-            .init(title: "tab 1", view: AnyView(Text("tab 1"))),
+            .init(title: "tab 1", view: AnyView(RecentTradeView())),
             .init(title: "tab 2", view: AnyView(Text("tab 2")))
         ])
     }

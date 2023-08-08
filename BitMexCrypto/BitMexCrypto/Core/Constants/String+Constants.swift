@@ -10,4 +10,7 @@ import Foundation
 public extension String {
     static let orderBookSizeTitle: String = "order.book.size.title"
     static let orderBookPriceTitle: String = "order.book.price.title"
+    
+    static let orderBookTitle = "order.book.title"
+    static let recentTradeTitle = "recent.trade.title"
 }

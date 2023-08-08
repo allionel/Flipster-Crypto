@@ -20,14 +20,14 @@ final class OrderBookViewModel: ObservableObject, CancellableBagHolder {
     init(useCase: OrderBookUseCase = DependencyContainer.shared.useCases.orderBook) {
         self.useCase = useCase
         bindData()
-    }
-    
-    func subscribeToOrderBooks() async {
-        do {
-            try await useCase.subscribeToOrderBookL2(with: .xbtusd)
-        } catch {
-            Debugger.print(error)
-            unsubscribeMessaging()
+        
+        Task {
+            do {
+                try await useCase.subscribeToOrderBookL2(with: .xbtusd)
+            } catch {
+                Debugger.print(error)
+                unsubscribeMessaging()
+            }
         }
     }
     

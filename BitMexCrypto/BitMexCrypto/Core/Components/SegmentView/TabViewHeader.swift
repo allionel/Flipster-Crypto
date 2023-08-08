@@ -12,28 +12,26 @@ struct TabViewHeader: View {
     @Binding var selectedTab: Int
     
     var body: some View {
-        GeometryReader { metrics in
-            ScrollView(.horizontal, showsIndicators: false) {
-                ScrollViewReader { proxy in
-                    HStack(spacing: .zero) {
-                        ForEach(.zero ..< tabs.count, id: \.self) { index in
-                            maketabButton(by: index, totalSize: metrics.size)
-                        }
-                    }
-                    .onChange(of: selectedTab) { target in
-                        withAnimation {
-                            proxy.scrollTo(target)
-                        }
+        ScrollView(.horizontal, showsIndicators: false) {
+            ScrollViewReader { proxy in
+                HStack(spacing: .zero) {
+                    ForEach(.zero ..< tabs.count, id: \.self) { index in
+                        maketabButton(by: index, totalSize: UIScreen.main.bounds.size)
                     }
                 }
-            }.frame(height: 64)
-        }
+                .onChange(of: selectedTab) { target in
+                    withAnimation {
+                        proxy.scrollTo(target)
+                    }
+                }
+            }
+        }.frame(maxHeight: 48)
     }
     
     @ViewBuilder
     private func maketabButton(by index: Int, totalSize: CGSize) -> some View {
         let indicatorWidth: CGFloat = totalSize.width / CGFloat(tabs.count)
-        let textColor: Color = selectedTab == index ? .appBlack : .action
+        let textColor: Color = selectedTab == index ? .appBlack : .caption
         let indicatorColor: Color = selectedTab == index ? .indicator : .clear
         
         Button {
@@ -50,7 +48,7 @@ struct TabViewHeader: View {
                 
                 Rectangle()
                     .fill(indicatorColor)
-                    .frame(width: indicatorWidth, height: 3)
+                    .frame(width: indicatorWidth, height: 2)
             }
         }
         .buttonStyle(.plain)

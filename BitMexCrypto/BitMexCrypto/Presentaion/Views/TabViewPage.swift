@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct TabViewPage: View {
+    @StateObject var orderBookViewModel: OrderBookViewModel = .init()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        SegmentViewPage(tabs: [
+            .init(title: .orderBookTitle.localized, view: AnyView(OrderBookView(viewModel: orderBookViewModel))),
+            .init(title: .recentTradeTitle.localized, view: .init(RecentTradeView()))
+        ])
+        .showLoading(with: .constant(orderBookViewModel.loading))
+        
     }
 }
 

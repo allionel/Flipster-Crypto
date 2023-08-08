@@ -8,19 +8,15 @@
 import SwiftUI
 
 struct OrderBookView: View {
-    @StateObject private var viewModel: OrderBookViewModel = .init()
+    @ObservedObject var viewModel: OrderBookViewModel 
     
     var body: some View {
         OrderBookListView(data: $viewModel.data)
-            .showLoading(with: $viewModel.loading)
-            .task {
-                await viewModel.subscribeToOrderBooks()
-            }
     }
 }
 
 struct OrderBookView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderBookView()
+        OrderBookView(viewModel: .init())
     }
 }
