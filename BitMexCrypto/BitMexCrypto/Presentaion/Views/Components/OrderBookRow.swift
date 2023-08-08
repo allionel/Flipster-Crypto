@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderBookRow: View {
-    let totalSize: Double
+    let totalSize: Int
     let data: OrderBookItem
     
     var body: some View {
@@ -44,7 +44,7 @@ struct OrderBookRow: View {
     }
     
     private var volumRatio: CGFloat {
-        data.qty / totalSize
+        Double(data.qty) / Double(totalSize)
     }
     
     private func makeLtrRow() -> some View {
@@ -64,13 +64,13 @@ struct OrderBookRow: View {
     }
 
     private func makePriceText() -> some View {
-        Text(data.price.asPrice)
+        Text(data.price.asFormattedPrice)
             .font(.appBody)
             .foregroundColor(side.isBuy ? .success : .alert)
     }
     
     private func makeQtyText() -> some View {
-        Text(data.qty.asString)
+        Text(data.qty.asFormattedAmount)
             .font(.appCaption)
             .foregroundColor(.appBlack)
     }
@@ -86,6 +86,6 @@ struct OrderBookRow: View {
 
 struct OrderBookRow_Previews: PreviewProvider {
     static var previews: some View {
-        OrderBookRow(totalSize: 120, data: OrderBookItem.mock)
+        OrderBookRow(totalSize: 12000, data: OrderBookItem.mock)
     }
 }

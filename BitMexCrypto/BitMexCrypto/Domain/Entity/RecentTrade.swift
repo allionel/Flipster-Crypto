@@ -18,7 +18,7 @@ extension RecentTrade {
         public let timestamp: Date
         public let symbol: String
         public let side: TradeSide
-        public let size: Int
+        public let size: Int?
         public let price: Double
         public let tickDirection: String
         public let trdMatchID: String

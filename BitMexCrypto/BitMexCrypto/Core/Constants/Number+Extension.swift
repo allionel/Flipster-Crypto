@@ -11,10 +11,17 @@ public extension Int {
     var asString: String {
         "\(self)"
     }
+    
+    var asFormattedAmount: String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(from: NSNumber(value: self)) ?? ""
+    }
+    
 }
 
 extension Double {
-    public var asPrice: String {
+    public var asFormattedPrice: String {
         let price = formatted(.currency(code: "USD"))
             .dropFirst()
             .dropLast()
