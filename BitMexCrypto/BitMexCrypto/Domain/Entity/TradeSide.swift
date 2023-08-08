@@ -20,4 +20,8 @@ extension TradeSide {
     public var isBuy: Bool {
         self == .buy
     }
+    
+    public var isSell: Bool {
+        self == .sell
+    }
 }

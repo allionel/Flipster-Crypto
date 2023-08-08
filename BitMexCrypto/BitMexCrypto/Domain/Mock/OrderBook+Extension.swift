@@ -9,7 +9,7 @@ import Foundation
 
 extension OrderBook {
     struct Mock {
-        static var list: OrderBook {
+        static var listOfAll: OrderBook {
             guard let url = Bundle.main.url(forResource: "OrderBooks", withExtension: "json"),
                   let data = try? Data(contentsOf: url)
             else { return .empty }
@@ -22,6 +22,18 @@ extension OrderBook {
                 Debugger.print("Decoding fialed")
             }
             return .empty
+        }
+        
+        static var buyList: OrderBook {
+            .init(table: listOfAll.table,
+                  action: listOfAll.action,
+                  data: listOfAll.data.filter(\.side.isBuy))
+        }
+        
+        static var sellList: OrderBook {
+            .init(table: listOfAll.table,
+                  action: listOfAll.action,
+                  data: listOfAll.data.filter(\.side.isSell))
         }
     }
 }
