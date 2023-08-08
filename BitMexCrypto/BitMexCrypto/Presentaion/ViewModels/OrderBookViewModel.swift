@@ -20,16 +20,16 @@ final class OrderBookViewModel: ObservableObject {
     
     init(useCase: OrderBookUseCase = DependencyContainer.shared.useCases.orderBook) {
         self.useCase = useCase
-//        bindData()
-//        
-//        Task {
-//            do {
-//                try await useCase.subscribeToOrderBookL2(with: .xbtusd)
-//            } catch {
-//                Debugger.print(error)
-//                unsubscribeMessaging()
-//            }
-//        }
+        bindData()
+
+        Task {
+            do {
+                try await useCase.subscribeToOrderBookL2(with: .xbtusd)
+            } catch {
+                Debugger.print(error)
+                unsubscribeMessaging()
+            }
+        }
     }
     
     private func unsubscribeMessaging() {

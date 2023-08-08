@@ -16,7 +16,7 @@ struct TabViewPage: View {
             .init(title: .orderBookTitle.localized, view: AnyView(OrderBookView(viewModel: orderBookViewModel))),
             .init(title: .recentTradeTitle.localized, view: .init(RecentTradeView(viewModel: recentTradeViewModel)))
         ])
-//        .showLoading(with: .constant(orderBookViewModel.loading))
+        .showLoading(with: .constant(orderBookViewModel.loading))
         
     }
 }

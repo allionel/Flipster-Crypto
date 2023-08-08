@@ -22,11 +22,19 @@ struct OrderBookRow: View {
                     makeRtlRow()
                 }
             }
+            
             .frame(height: Self.height)
-            .background(alignment: alignment, content: {
+            .background(alignment: alignment) {
                 makeHightlightBackground(with: metrics.size.width)
-            })
+            }
             .easeOutAnimation(by: data)
+            .background(splashColor)
+            .onAppear {
+                withAnimation {
+                    data.didHighlight = false
+                }
+            }
+            .springAnimation(by: data.didHighlight, duration: 0.2)
         }
     }
     
@@ -34,8 +42,12 @@ struct OrderBookRow: View {
         data.tradeSide
     }
     
-    private var color: Color {
+    private var tintColor: Color {
         side.isBuy ? .success : .alert
+    }
+    
+    private var splashColor: Color {
+        data.didHighlight ? tintColor.opacity(0.5) : .clear
     }
     
     private var hightlightColor: Color {
