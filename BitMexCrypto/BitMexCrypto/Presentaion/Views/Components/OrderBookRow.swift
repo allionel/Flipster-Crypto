@@ -11,6 +11,7 @@ struct OrderBookRow: View {
     let totalSize: Int
     let data: OrderBookItem
     
+    static let height: CGFloat = 38
     var body: some View {
         GeometryReader { metrics in
             Group {
@@ -20,7 +21,7 @@ struct OrderBookRow: View {
                     makeRtlRow()
                 }
             }
-            .padding(.minimumSpacing)
+            .frame(height: Self.height)
             .background(alignment: alignment, content: {
                 makeHightlightBackground(with: metrics.size.width)
             })

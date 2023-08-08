@@ -11,8 +11,14 @@ import SwiftUI
 struct BitMexCryptoApp: App {
     var body: some Scene {
         WindowGroup {
-            let data = OrderBook.Mock.buyList.data.map(\.toLocalModel)
-            OrderBookList(totalSize: 12000, data: data)
+            let data: OrderBookListData = .init(
+                buyList: .buy(
+                    total: 12000,
+                    data: OrderBook.Mock.buyList.data.map(\.toLocalModel)),
+                sellList: .sell(
+                    total: 12000,
+                    data: OrderBook.Mock.sellList.data.map(\.toLocalModel)))
+            OrderBookListView(data: data)
         }
     }
 }

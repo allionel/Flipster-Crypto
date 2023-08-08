@@ -42,7 +42,6 @@
 		7F3E39F62A817DD600968CDB /* RecentTradeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F52A817DD600968CDB /* RecentTradeUseCase.swift */; };
 		7F3E39F82A817DE300968CDB /* RecentTradeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F72A817DE300968CDB /* RecentTradeRepository.swift */; };
 		7F3E39FA2A819E6400968CDB /* OrderBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F92A819E6400968CDB /* OrderBookView.swift */; };
-		7F3E39FD2A819EA600968CDB /* OrderBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39FC2A819EA600968CDB /* OrderBookList.swift */; };
 		7F3E3A012A819ECD00968CDB /* OrderBookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */; };
 		7F3E3A032A81A64D00968CDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A022A81A64D00968CDB /* Colors.xcassets */; };
 		7F3E3A062A81A9D900968CDB /* Color+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A052A81A9D900968CDB /* Color+Constants.swift */; };
@@ -55,6 +54,10 @@
 		7F3E3A192A81C4E000968CDB /* OrderBook+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A182A81C4E000968CDB /* OrderBook+Extension.swift */; };
 		7F3E3A1A2A81C74700968CDB /* OrderBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A152A81C3F300968CDB /* OrderBooks.json */; };
 		7F3E3A1B2A81C74C00968CDB /* RecentTrades.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A162A81C48500968CDB /* RecentTrades.json */; };
+		7F3E3A1D2A81CF4200968CDB /* OrderBookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A1C2A81CF4200968CDB /* OrderBookListView.swift */; };
+		7F3E3A1F2A81D8A600968CDB /* OrderBookListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */; };
+		7F3E3A212A81DB0200968CDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A202A81DB0200968CDB /* Localizable.strings */; };
+		7F3E3A232A81DB9300968CDB /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A222A81DB9300968CDB /* String+Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +119,6 @@
 		7F3E39F52A817DD600968CDB /* RecentTradeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeUseCase.swift; sourceTree = "<group>"; };
 		7F3E39F72A817DE300968CDB /* RecentTradeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeRepository.swift; sourceTree = "<group>"; };
 		7F3E39F92A819E6400968CDB /* OrderBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookView.swift; sourceTree = "<group>"; };
-		7F3E39FC2A819EA600968CDB /* OrderBookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookList.swift; sourceTree = "<group>"; };
 		7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookRow.swift; sourceTree = "<group>"; };
 		7F3E3A022A81A64D00968CDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7F3E3A052A81A9D900968CDB /* Color+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Constants.swift"; sourceTree = "<group>"; };
@@ -129,6 +131,10 @@
 		7F3E3A152A81C3F300968CDB /* OrderBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OrderBooks.json; sourceTree = "<group>"; };
 		7F3E3A162A81C48500968CDB /* RecentTrades.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecentTrades.json; sourceTree = "<group>"; };
 		7F3E3A182A81C4E000968CDB /* OrderBook+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderBook+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A1C2A81CF4200968CDB /* OrderBookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookListView.swift; sourceTree = "<group>"; };
+		7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookListData.swift; sourceTree = "<group>"; };
+		7F3E3A202A81DB0200968CDB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7F3E3A222A81DB9300968CDB /* String+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Constants.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				7F1797722A7DBC1800DE2F41 /* Info.plist */,
+				7F3E3A202A81DB0200968CDB /* Localizable.strings */,
 				7F1797402A7DB61900DE2F41 /* Assets.xcassets */,
 				7F3E3A022A81A64D00968CDB /* Colors.xcassets */,
 			);
@@ -358,6 +365,8 @@
 			isa = PBXGroup;
 			children = (
 				7F3E39D62A7E407200968CDB /* Codable+Extension.swift */,
+				7F3E3A102A81ACB600968CDB /* Strings+Extension.swift */,
+				7F3E3A122A81ACE100968CDB /* Number+Extension.swift */,
 				7F3E39D42A7E3D8900968CDB /* Formatter+Extension.swift */,
 				7F3E39D82A7E44A900968CDB /* String+Extension.swift */,
 				7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */,
@@ -389,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */,
-				7F3E39FC2A819EA600968CDB /* OrderBookList.swift */,
+				7F3E3A1C2A81CF4200968CDB /* OrderBookListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -397,11 +406,10 @@
 		7F3E3A042A81A9C100968CDB /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				7F3E3A222A81DB9300968CDB /* String+Constants.swift */,
 				7F3E3A052A81A9D900968CDB /* Color+Constants.swift */,
-				7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */,
-				7F3E3A102A81ACB600968CDB /* Strings+Extension.swift */,
 				7F3E3A072A81A9F900968CDB /* Font+Constants.swift */,
-				7F3E3A122A81ACE100968CDB /* Number+Extension.swift */,
+				7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				7F3E3A0E2A81AB9500968CDB /* OrderBookItem.swift */,
+				7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -537,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3E3A1B2A81C74C00968CDB /* RecentTrades.json in Resources */,
+				7F3E3A212A81DB0200968CDB /* Localizable.strings in Resources */,
 				7F3E3A032A81A64D00968CDB /* Colors.xcassets in Resources */,
 				7F1797442A7DB61900DE2F41 /* Preview Assets.xcassets in Resources */,
 				7F1797412A7DB61900DE2F41 /* Assets.xcassets in Resources */,
@@ -576,6 +586,7 @@
 				7F17977E2A7DC4CE00DE2F41 /* Debugger.swift in Sources */,
 				7F3E39E12A7E4A5C00968CDB /* RecentTrade.swift in Sources */,
 				7F1797862A7DC62A00DE2F41 /* BitMexOperation.swift in Sources */,
+				7F3E3A1F2A81D8A600968CDB /* OrderBookListData.swift in Sources */,
 				7F1797842A7DC60A00DE2F41 /* SubscriptionTopic.swift in Sources */,
 				7F3E39F62A817DD600968CDB /* RecentTradeUseCase.swift in Sources */,
 				7F3E39E72A7E870200968CDB /* OrderBookUseCase.swift in Sources */,
@@ -590,6 +601,7 @@
 				7F3E3A132A81ACE100968CDB /* Number+Extension.swift in Sources */,
 				7F3E39FA2A819E6400968CDB /* OrderBookView.swift in Sources */,
 				7F3E39D52A7E3D8900968CDB /* Formatter+Extension.swift in Sources */,
+				7F3E3A1D2A81CF4200968CDB /* OrderBookListView.swift in Sources */,
 				7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */,
 				7F3E39EB2A8157EA00968CDB /* CancellableBagHolder.swift in Sources */,
 				7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */,
@@ -600,8 +612,8 @@
 				7F3E39F22A816A8C00968CDB /* RepositoryDependencyContainer.swift in Sources */,
 				7F1797792A7DC3FE00DE2F41 /* WebSocketError.swift in Sources */,
 				7F3E3A0C2A81AA4900968CDB /* CGFloat+Constants.swift in Sources */,
-				7F3E39FD2A819EA600968CDB /* OrderBookList.swift in Sources */,
 				7F3E39D92A7E44A900968CDB /* String+Extension.swift in Sources */,
+				7F3E3A232A81DB9300968CDB /* String+Constants.swift in Sources */,
 				7F3E39EE2A81693800968CDB /* DependencyContainer.swift in Sources */,
 				7F3E39F02A81696F00968CDB /* Singleton.swift in Sources */,
 				7F17973D2A7DB61700DE2F41 /* BitMexCryptoApp.swift in Sources */,
