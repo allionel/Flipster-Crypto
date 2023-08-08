@@ -32,7 +32,7 @@ struct TabViewHeader: View {
     private func maketabButton(by index: Int, totalSize: CGSize) -> some View {
         let indicatorWidth: CGFloat = totalSize.width / CGFloat(tabs.count)
         let textColor: Color = selectedTab == index ? .appBlack : .caption
-        let indicatorColor: Color = selectedTab == index ? .indicator : .clear
+        let indicatorColor: Color = selectedTab == index ? .indicator : Color.caption.opacity(0.2)
         
         Button {
             withAnimation {

@@ -13,4 +13,6 @@ public extension String {
     
     static let orderBookTitle = "order.book.title"
     static let recentTradeTitle = "recent.trade.title"
+    
+    static let timeTitle = "time.title"
 }

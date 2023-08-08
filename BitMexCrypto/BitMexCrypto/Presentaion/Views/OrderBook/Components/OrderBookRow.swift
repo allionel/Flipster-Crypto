@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrderBookRow: View {
     let totalSize: Int
-    let data: OrderBookItem
+    @Binding var data: OrderBookItem
     
     static let height: CGFloat = 36
     
@@ -91,6 +91,6 @@ struct OrderBookRow: View {
 
 struct OrderBookRow_Previews: PreviewProvider {
     static var previews: some View {
-        OrderBookRow(totalSize: 12000, data: OrderBookItem.mock)
+        OrderBookRow(totalSize: 12000, data: .constant(OrderBookItem.mock))
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 extension RecentTrade {
     struct Mock {
-        static var listOfAll: OrderBook {
+        static var listOfAll: RecentTrade {
             guard let url = Bundle.main.url(forResource: "RecentTrades", withExtension: "json"),
                   let data = try? Data(contentsOf: url)
             else { return .empty }
@@ -17,23 +17,27 @@ extension RecentTrade {
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601withFractionalSeconds
-                return try decoder.decode(OrderBook.self, from: data)
+                return try decoder.decode(RecentTrade.self, from: data)
             } catch {
                 Debugger.print("Decoding fialed")
             }
             return .empty
         }
         
-        static var buyList: OrderBook {
+        static var buyList: RecentTrade {
             .init(table: listOfAll.table,
                   action: listOfAll.action,
                   data: listOfAll.data.filter(\.side.isBuy))
         }
         
-        static var sellList: OrderBook {
+        static var sellList: RecentTrade {
             .init(table: listOfAll.table,
                   action: listOfAll.action,
                   data: listOfAll.data.filter(\.side.isSell))
         }
     }
+}
+
+extension RecentTrade {
+    static var empty: Self = .init(table: nil, action: nil, data: [])
 }

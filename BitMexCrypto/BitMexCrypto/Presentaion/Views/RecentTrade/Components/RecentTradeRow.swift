@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecentTradeRow: View {
-    let data: RecentTradeItem
+    @Binding var data: RecentTradeItem
     
     static let height: CGFloat = 36
     
@@ -19,6 +19,10 @@ struct RecentTradeRow: View {
     
     private var side: TradeSide {
         data.tradeSide
+    }
+    
+    private var tintColor: Color {
+        side.isBuy ? .success : .alert
     }
     
     private func makeTradeRow() -> some View {
@@ -36,34 +40,24 @@ struct RecentTradeRow: View {
     private func makePriceText() -> some View {
         Text(data.price.asFormattedPrice)
             .font(.appBody)
-            .foregroundColor(side.isBuy ? .success : .alert)
+            .foregroundColor(tintColor)
     }
     
     private func makeQtyText() -> some View {
         Text(data.qty.asFormattedAmount)
-            .font(.appCaption)
-            .foregroundColor(.appBlack)
+            .font(.appBody)
+            .foregroundColor(tintColor)
     }
     
     private func makeTimeText() -> some View {
         Text(data.timestamp.asShortTime)
-            .font(.appCaption)
-            .foregroundColor(.appBlack)
+            .font(.appBody)
+            .foregroundColor(tintColor)
     }
 }
 
 struct RecentTradeRow_Previews: PreviewProvider {
     static var previews: some View {
-        RecentTradeRow(data: RecentTradeItem.mock)
-    }
-}
-
-
-extension Date {
-    var asShortTime: String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .medium
-        let time = formatter.string(from: Date.now)
-        return time
+        RecentTradeRow(data: .constant(RecentTradeItem.mock))
     }
 }

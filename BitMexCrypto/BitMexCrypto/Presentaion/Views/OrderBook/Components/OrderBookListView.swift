@@ -52,7 +52,7 @@ struct OrderBookListView: View {
     private func makeOrderBookList(totalSize: Int, data: [OrderBookItem]) -> some View {
         VStack(spacing: .zero) {
             ForEach(data, id: \.self) { item in
-                OrderBookRow(totalSize: totalSize, data: item)
+                OrderBookRow(totalSize: totalSize, data: .constant(item))
                     .frame(height: OrderBookRow.height)
             }
         }

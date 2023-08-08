@@ -13,6 +13,7 @@ struct OrderBookItem {
     let price: Double
     let tradeSide: TradeSide
     var didChange: Bool = false
+    var didHighlight: Bool = false
 }
 
 extension OrderBookItem: Hashable {

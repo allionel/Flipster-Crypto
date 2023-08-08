@@ -180,6 +180,7 @@ final class OrderBookViewModel: ObservableObject, CancellableBagHolder {
         var mutatingBuyItems = data?.buyList.data ?? []
         if !buyItems.isEmpty {
             buyItems.forEach { item in
+                guard buyItems.count > 20 else { return }
                 mutatingBuyItems.remove(item)
             }
         }
@@ -187,6 +188,7 @@ final class OrderBookViewModel: ObservableObject, CancellableBagHolder {
         var mutatingSellItems = data?.sellList.data ?? []
         if !sellItems.isEmpty {
             sellItems.forEach { item in
+                guard sellItems.count > 20 else { return }
                 mutatingSellItems.remove(item)
             }
         }

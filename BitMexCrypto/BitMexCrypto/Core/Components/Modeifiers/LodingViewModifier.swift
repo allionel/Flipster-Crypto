@@ -33,7 +33,6 @@ public struct LodingViewModifier: ViewModifier {
             .visibility(!loading.isLoading)
             .overlay {
                 ProgressView()
-                    .tint(.blue)
                     .visibility(loading.isLoading)
             }
     }

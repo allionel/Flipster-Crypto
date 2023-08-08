@@ -13,7 +13,7 @@ public extension Font {
     }
     
     static var appBody: Font {
-        .system(Font.TextStyle.subheadline, design: .default, weight: .semibold)
+        .system(Font.TextStyle.subheadline, design: .default, weight: .medium)
     }
     
     static var appCaption: Font {

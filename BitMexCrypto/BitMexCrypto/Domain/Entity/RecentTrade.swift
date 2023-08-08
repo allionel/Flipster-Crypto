@@ -8,9 +8,9 @@
 import Foundation
 
 public struct RecentTrade: Decodable, Equatable {
-    public let table: SubscriptionTopic
-    public let action: BitmexAction
-    public let data: [RecentTradeItem]
+    public let table: SubscriptionTopic?
+    public let action: BitmexAction?
+    public let data: [RecentTrade.RecentTradeItem]
 }
 
 extension RecentTrade {
