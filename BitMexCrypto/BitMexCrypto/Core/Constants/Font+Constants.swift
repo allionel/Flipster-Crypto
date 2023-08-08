@@ -13,14 +13,14 @@ public extension Font {
     }
     
     static var appBody: Font {
-        .system(Font.TextStyle.body, design: .default, weight: .bold)
+        .system(Font.TextStyle.callout, design: .default, weight: .bold)
     }
     
     static var appCaption: Font {
-        .system(Font.TextStyle.body, design: .default, weight: .semibold)
+        .system(Font.TextStyle.callout, design: .default, weight: .regular)
     }
     
     static var appRegular: Font {
-        .system(Font.TextStyle.body, design: .default, weight: .regular)
+        .system(Font.TextStyle.callout, design: .default, weight: .regular)
     }
 }

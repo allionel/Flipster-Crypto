@@ -14,11 +14,12 @@ public extension Int {
 }
 
 extension Double {
-    public var asAmountFormat: String {
-        self.formatted(.currency(code: "USD"))
+    public var asPrice: String {
+        let price = formatted(.currency(code: "USD"))
             .dropFirst()
+            .dropLast()
             .toString
-//        String(format: "%.2f", self)
+       return price
     }
     
     public var asString: String {

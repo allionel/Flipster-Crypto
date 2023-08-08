@@ -58,7 +58,7 @@ final class BitMexWebSocket<Provider: WebSocketStream, DataOutput: Decodable> wh
 extension BitMexWebSocket: WebSocketProvider {
     func subscribe(to topics: [SubscriptionTopic : String]) async throws {
         let message =  try requestString(.subscribe, topics: topics)
-        try await webSocketStream.sendData( message.data(using: .utf8)!)
+        try await webSocketStream.sendMessage(message)
         Debugger.print("Socket subscribes to: ", topics)
         try await sendSocketStreamIteratedOutput()
     }

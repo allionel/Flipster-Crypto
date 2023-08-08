@@ -10,9 +10,9 @@ import Foundation
 struct OrderBookItem {
     let qty: Double
     let price: Double
-    let tradeType: TradeSide
+    let tradeSide: TradeSide
 }
 
 extension OrderBookItem {
-    static let mock: OrderBookItem = .init(qty: 0.1435, price: 53245, tradeType: .buy)
+    static let mock: OrderBookItem = .init(qty: 24, price: 53245, tradeSide: .buy)
 }
