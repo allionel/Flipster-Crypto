@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderBookListView: View {
-    let data: OrderBookListData
+    @Binding var data: OrderBookListData?
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -16,9 +16,9 @@ struct OrderBookListView: View {
             Divider()
             ScrollView {
                 HStack(alignment: .top, spacing: .zero) {
-                    makeOrderBookList(totalSize: data.buyList.totalSize, list: data.buyList)
+                    makeOrderBookList(totalSize: data?.buyList.totalSize ?? .zero, data: data?.buyList.data ?? [])
                         .padding(.leading, .horizontalPadding)
-                    makeOrderBookList(totalSize: data.sellList.totalSize, list: data.sellList)
+                    makeOrderBookList(totalSize: data?.sellList.totalSize ?? .zero, data: data?.sellList.data ?? [])
                         .padding(.trailing, .horizontalPadding)
                 }
             }
@@ -43,9 +43,9 @@ struct OrderBookListView: View {
         .padding(.vertical, .interItemSpacing)
     }
     
-    private func makeOrderBookList(totalSize: Int, list: OrderBookListType) -> some View {
+    private func makeOrderBookList(totalSize: Int, data: [OrderBookItem]) -> some View {
         VStack(spacing: .zero) {
-            ForEach(list.data, id: \.self) { item in
+            ForEach(data, id: \.self) { item in
                 OrderBookRow(totalSize: totalSize, data: item)
                     .frame(height: OrderBookRow.height)
             }
@@ -58,11 +58,11 @@ struct OrderBookListView_Previews: PreviewProvider {
         let data: OrderBookListData = .init(
             buyList: .buy(
                 total: 12000,
-                data: OrderBook.Mock.buyList.data.map(\.toLocalModel)),
+                data: OrderBook.Mock.buyList.data.map(\.asLocalData)),
             sellList: .sell(
                 total: 12000,
-                data: OrderBook.Mock.sellList.data.map(\.toLocalModel)))
-        OrderBookListView(data: data)
+                data: OrderBook.Mock.sellList.data.map(\.asLocalData)))
+        OrderBookListView(data: .constant(data))
     }
 }
 

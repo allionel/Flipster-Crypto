@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct OrderBookView: View {
+    @StateObject private var viewModel: OrderBookViewModel = .init()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        OrderBookListView(data: $viewModel.data)
+            .showLoading(with: $viewModel.loading)
+            .task {
+                await viewModel.subscribeToOrderBooks()
+            }
     }
 }
 

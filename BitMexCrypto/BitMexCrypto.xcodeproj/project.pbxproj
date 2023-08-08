@@ -62,6 +62,14 @@
 		7F3E3A2C2A81E7BD00968CDB /* TabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */; };
 		7F3E3A2E2A81EC2500968CDB /* SegmentViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2D2A81EC2500968CDB /* SegmentViewItem.swift */; };
 		7F3E3A302A81EC4500968CDB /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */; };
+		7F3E3A332A81FFB600968CDB /* TabViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A322A81FFB600968CDB /* TabViewPage.swift */; };
+		7F3E3A352A81FFCF00968CDB /* OrderBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A342A81FFCF00968CDB /* OrderBookViewModel.swift */; };
+		7F3E3A372A81FFE600968CDB /* RecentTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A362A81FFE600968CDB /* RecentTradeView.swift */; };
+		7F3E3A392A82002B00968CDB /* RecentTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A382A82002B00968CDB /* RecentTradeViewModel.swift */; };
+		7F3E3A3B2A8205CC00968CDB /* Double+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A3A2A8205CC00968CDB /* Double+Constants.swift */; };
+		7F3E3A3D2A8217AF00968CDB /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */; };
+		7F3E3A3F2A8217CC00968CDB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */; };
+		7F3E3A422A82180C00968CDB /* LodingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +151,14 @@
 		7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewHeader.swift; sourceTree = "<group>"; };
 		7F3E3A2D2A81EC2500968CDB /* SegmentViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewItem.swift; sourceTree = "<group>"; };
 		7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A322A81FFB600968CDB /* TabViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewPage.swift; sourceTree = "<group>"; };
+		7F3E3A342A81FFCF00968CDB /* OrderBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookViewModel.swift; sourceTree = "<group>"; };
+		7F3E3A362A81FFE600968CDB /* RecentTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeView.swift; sourceTree = "<group>"; };
+		7F3E3A382A82002B00968CDB /* RecentTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeViewModel.swift; sourceTree = "<group>"; };
+		7F3E3A3A2A8205CC00968CDB /* Double+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +259,9 @@
 			children = (
 				7F3E3A0D2A81AB7800968CDB /* Model */,
 				7F3E39FB2A819E9600968CDB /* Components */,
+				7F3E3A322A81FFB600968CDB /* TabViewPage.swift */,
 				7F3E39F92A819E6400968CDB /* OrderBookView.swift */,
+				7F3E3A362A81FFE600968CDB /* RecentTradeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +269,8 @@
 		7F1797682A7DB84A00DE2F41 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7F3E3A342A81FFCF00968CDB /* OrderBookViewModel.swift */,
+				7F3E3A382A82002B00968CDB /* RecentTradeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -420,6 +440,9 @@
 				7F3E3A052A81A9D900968CDB /* Color+Constants.swift */,
 				7F3E3A072A81A9F900968CDB /* Font+Constants.swift */,
 				7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */,
+				7F3E3A3A2A8205CC00968CDB /* Double+Constants.swift */,
+				7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */,
+				7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -455,6 +478,7 @@
 		7F3E3A242A81E09200968CDB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7F3E3A402A8217FD00968CDB /* Modeifiers */,
 				7F3E3A312A81F10100968CDB /* SegmentView */,
 			);
 			path = Components;
@@ -467,6 +491,14 @@
 				7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */,
 			);
 			path = SegmentView;
+			sourceTree = "<group>";
+		};
+		7F3E3A402A8217FD00968CDB /* Modeifiers */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */,
+			);
+			path = Modeifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,8 +641,10 @@
 				7F3E39E32A7E53AA00968CDB /* Subscribers+Extension.swift in Sources */,
 				7F3E39DF2A7E4A2300968CDB /* TradeSide.swift in Sources */,
 				7F3E39F82A817DE300968CDB /* RecentTradeRepository.swift in Sources */,
+				7F3E3A422A82180C00968CDB /* LodingViewModifier.swift in Sources */,
 				7F3E39DD2A7E47DB00968CDB /* OrderBook.swift in Sources */,
 				7F1797822A7DC5DB00DE2F41 /* SocketRequest.swift in Sources */,
+				7F3E3A392A82002B00968CDB /* RecentTradeViewModel.swift in Sources */,
 				7F17977E2A7DC4CE00DE2F41 /* Debugger.swift in Sources */,
 				7F3E39E12A7E4A5C00968CDB /* RecentTrade.swift in Sources */,
 				7F1797862A7DC62A00DE2F41 /* BitMexOperation.swift in Sources */,
@@ -622,8 +656,12 @@
 				7F3E39D22A7E3A5C00968CDB /* BitMexAction.swift in Sources */,
 				7F1797712A7DB9BD00DE2F41 /* Configuration.swift in Sources */,
 				7F3E3A082A81A9F900968CDB /* Font+Constants.swift in Sources */,
+				7F3E3A332A81FFB600968CDB /* TabViewPage.swift in Sources */,
 				7F3E3A0F2A81AB9500968CDB /* OrderBookItem.swift in Sources */,
 				7F3E3A192A81C4E000968CDB /* OrderBook+Extension.swift in Sources */,
+				7F3E3A352A81FFCF00968CDB /* OrderBookViewModel.swift in Sources */,
+				7F3E3A3B2A8205CC00968CDB /* Double+Constants.swift in Sources */,
+				7F3E3A3D2A8217AF00968CDB /* Optional+Extension.swift in Sources */,
 				7F17973F2A7DB61800DE2F41 /* ContentView.swift in Sources */,
 				7F3E3A282A81E0C200968CDB /* SegmentViewPage.swift in Sources */,
 				7F3E39F42A816AD300968CDB /* UseCaseDependencyContainer.swift in Sources */,
@@ -633,7 +671,9 @@
 				7F3E3A1D2A81CF4200968CDB /* OrderBookListView.swift in Sources */,
 				7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */,
 				7F3E39EB2A8157EA00968CDB /* CancellableBagHolder.swift in Sources */,
+				7F3E3A3F2A8217CC00968CDB /* View+Extension.swift in Sources */,
 				7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */,
+				7F3E3A372A81FFE600968CDB /* RecentTradeView.swift in Sources */,
 				7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */,
 				7F3E39DB2A7E478000968CDB /* OrderBookRepository.swift in Sources */,
 				7F3E3A112A81ACB600968CDB /* Strings+Extension.swift in Sources */,

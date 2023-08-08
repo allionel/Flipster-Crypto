@@ -80,6 +80,7 @@ struct OrderBookRow: View {
     
     @ViewBuilder
     private func makeHightlightBackground(with width: CGFloat) -> some View {
+        
         let width: CGFloat = volumRatio * width
         Rectangle()
             .fill(hightlightColor)

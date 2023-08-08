@@ -21,7 +21,7 @@ extension OrderBookItem: Hashable {
 }
 
 extension OrderBook.OrderBookItem {
-    var toLocalModel: OrderBookItem {
+    var asLocalData: OrderBookItem {
         .init(id: id, qty: size ?? .zero, price: price, tradeSide: side)
     }
 }

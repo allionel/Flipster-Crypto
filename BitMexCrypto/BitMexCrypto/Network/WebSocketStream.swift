@@ -57,7 +57,6 @@ final class WebSocketManager {
         socket?.receive { [unowned self] result in
             switch result {
             case .success(let message):
-                print(message)
                 continuation.yield(message)
                 Task { try await subscribeMessages() }
             case .failure(let error):
