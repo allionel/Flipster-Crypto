@@ -11,7 +11,7 @@ struct OrderBookRow: View {
     let totalSize: Int
     let data: OrderBookItem
     
-    static let height: CGFloat = 38
+    static let height: CGFloat = 36
     var body: some View {
         GeometryReader { metrics in
             Group {
@@ -25,6 +25,7 @@ struct OrderBookRow: View {
             .background(alignment: alignment, content: {
                 makeHightlightBackground(with: metrics.size.width)
             })
+            .easeOutAnimation(by: data)
         }
     }
     

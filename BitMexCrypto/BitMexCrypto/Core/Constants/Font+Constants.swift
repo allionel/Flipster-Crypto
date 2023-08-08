@@ -13,11 +13,11 @@ public extension Font {
     }
     
     static var appBody: Font {
-        .system(Font.TextStyle.callout, design: .default, weight: .bold)
+        .system(Font.TextStyle.subheadline, design: .default, weight: .semibold)
     }
     
     static var appCaption: Font {
-        .system(Font.TextStyle.callout, design: .default, weight: .regular)
+        .system(Font.TextStyle.footnote, design: .default, weight: .regular)
     }
     
     static var appRegular: Font {

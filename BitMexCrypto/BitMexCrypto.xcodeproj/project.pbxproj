@@ -70,6 +70,8 @@
 		7F3E3A3D2A8217AF00968CDB /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */; };
 		7F3E3A3F2A8217CC00968CDB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */; };
 		7F3E3A422A82180C00968CDB /* LodingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */; };
+		7F3E3A442A823B0F00968CDB /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A432A823B0F00968CDB /* Array+Extension.swift */; };
+		7F3E3A462A823BAF00968CDB /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A452A823BAF00968CDB /* View+Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,8 @@
 		7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingViewModifier.swift; sourceTree = "<group>"; };
+		7F3E3A432A823B0F00968CDB /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A452A823BAF00968CDB /* View+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +405,10 @@
 				7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */,
 				7F3E3A092A81AA0800968CDB /* Color+Extension.swift */,
 				7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */,
+				7F3E3A432A823B0F00968CDB /* Array+Extension.swift */,
+				7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */,
+				7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */,
+				7F3E3A452A823BAF00968CDB /* View+Animation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,8 +449,6 @@
 				7F3E3A072A81A9F900968CDB /* Font+Constants.swift */,
 				7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */,
 				7F3E3A3A2A8205CC00968CDB /* Double+Constants.swift */,
-				7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */,
-				7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				7F3E3A062A81A9D900968CDB /* Color+Constants.swift in Sources */,
 				7F3E39E32A7E53AA00968CDB /* Subscribers+Extension.swift in Sources */,
 				7F3E39DF2A7E4A2300968CDB /* TradeSide.swift in Sources */,
+				7F3E3A462A823BAF00968CDB /* View+Animation.swift in Sources */,
 				7F3E39F82A817DE300968CDB /* RecentTradeRepository.swift in Sources */,
 				7F3E3A422A82180C00968CDB /* LodingViewModifier.swift in Sources */,
 				7F3E39DD2A7E47DB00968CDB /* OrderBook.swift in Sources */,
@@ -671,6 +678,7 @@
 				7F3E3A1D2A81CF4200968CDB /* OrderBookListView.swift in Sources */,
 				7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */,
 				7F3E39EB2A8157EA00968CDB /* CancellableBagHolder.swift in Sources */,
+				7F3E3A442A823B0F00968CDB /* Array+Extension.swift in Sources */,
 				7F3E3A3F2A8217CC00968CDB /* View+Extension.swift in Sources */,
 				7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */,
 				7F3E3A372A81FFE600968CDB /* RecentTradeView.swift in Sources */,

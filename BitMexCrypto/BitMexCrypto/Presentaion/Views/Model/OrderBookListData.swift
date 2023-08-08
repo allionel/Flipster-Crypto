@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct OrderBookListData {
+struct OrderBookListData: Hashable {
     let buyList: OrderBookListType
     let sellList: OrderBookListType
 }
 
-enum OrderBookListType {
+enum OrderBookListType: Hashable {
     case buy(total: Int, data: [OrderBookItem])
     case sell(total: Int, data: [OrderBookItem])
 }

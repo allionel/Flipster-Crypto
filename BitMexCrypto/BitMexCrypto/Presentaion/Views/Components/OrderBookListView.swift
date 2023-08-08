@@ -11,15 +11,21 @@ struct OrderBookListView: View {
     @Binding var data: OrderBookListData?
     
     var body: some View {
-        VStack(spacing: .zero) {
-            makeHedear()
-            Divider()
-            ScrollView {
-                HStack(alignment: .top, spacing: .zero) {
-                    makeOrderBookList(totalSize: data?.buyList.totalSize ?? .zero, data: data?.buyList.data ?? [])
-                        .padding(.leading, .horizontalPadding)
-                    makeOrderBookList(totalSize: data?.sellList.totalSize ?? .zero, data: data?.sellList.data ?? [])
-                        .padding(.trailing, .horizontalPadding)
+        GeometryReader { metrics in
+            VStack(spacing: .zero) {
+                makeHedear()
+                Divider()
+                ScrollView {
+                    HStack(alignment: .top, spacing: .zero) {
+                        Group {
+                            makeOrderBookList(totalSize: data?.buyList.totalSize ?? .zero, data: data?.buyList.data ?? [])
+                                .padding(.leading, .horizontalPadding)
+                            makeOrderBookList(totalSize: data?.sellList.totalSize ?? .zero, data: data?.sellList.data ?? [])
+                                .padding(.trailing, .horizontalPadding)
+                        }
+                        .frame(width: (metrics.size.width)/2)
+                    }
+                    .easeOutAnimation(by: data)
                 }
             }
         }
