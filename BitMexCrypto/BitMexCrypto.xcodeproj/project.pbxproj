@@ -1,0 +1,1096 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F17973D2A7DB61700DE2F41 /* BitMexCryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17973C2A7DB61700DE2F41 /* BitMexCryptoApp.swift */; };
+		7F17973F2A7DB61800DE2F41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17973E2A7DB61800DE2F41 /* ContentView.swift */; };
+		7F1797412A7DB61900DE2F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1797402A7DB61900DE2F41 /* Assets.xcassets */; };
+		7F1797442A7DB61900DE2F41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F1797432A7DB61900DE2F41 /* Preview Assets.xcassets */; };
+		7F17974E2A7DB61900DE2F41 /* BitMexCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17974D2A7DB61900DE2F41 /* BitMexCryptoTests.swift */; };
+		7F1797582A7DB61900DE2F41 /* BitMexCryptoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797572A7DB61900DE2F41 /* BitMexCryptoUITests.swift */; };
+		7F17975A2A7DB61900DE2F41 /* BitMexCryptoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797592A7DB61900DE2F41 /* BitMexCryptoUITestsLaunchTests.swift */; };
+		7F1797712A7DB9BD00DE2F41 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797702A7DB9BD00DE2F41 /* Configuration.swift */; };
+		7F1797792A7DC3FE00DE2F41 /* WebSocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797782A7DC3FE00DE2F41 /* WebSocketError.swift */; };
+		7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17977A2A7DC46B00DE2F41 /* WebSocketStream.swift */; };
+		7F17977E2A7DC4CE00DE2F41 /* Debugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17977D2A7DC4CE00DE2F41 /* Debugger.swift */; };
+		7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17977F2A7DC50600DE2F41 /* WebSocketProvider.swift */; };
+		7F1797822A7DC5DB00DE2F41 /* SocketRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797812A7DC5DB00DE2F41 /* SocketRequest.swift */; };
+		7F1797842A7DC60A00DE2F41 /* SubscriptionTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797832A7DC60A00DE2F41 /* SubscriptionTopic.swift */; };
+		7F1797862A7DC62A00DE2F41 /* BitMexOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1797852A7DC62A00DE2F41 /* BitMexOperation.swift */; };
+		7F3E39D02A7E39BE00968CDB /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39CF2A7E39BE00968CDB /* Instrument.swift */; };
+		7F3E39D22A7E3A5C00968CDB /* BitMexAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39D12A7E3A5C00968CDB /* BitMexAction.swift */; };
+		7F3E39D52A7E3D8900968CDB /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39D42A7E3D8900968CDB /* Formatter+Extension.swift */; };
+		7F3E39D72A7E407200968CDB /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39D62A7E407200968CDB /* Codable+Extension.swift */; };
+		7F3E39D92A7E44A900968CDB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39D82A7E44A900968CDB /* String+Extension.swift */; };
+		7F3E39DB2A7E478000968CDB /* OrderBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39DA2A7E478000968CDB /* OrderBookRepository.swift */; };
+		7F3E39DD2A7E47DB00968CDB /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39DC2A7E47DB00968CDB /* OrderBook.swift */; };
+		7F3E39DF2A7E4A2300968CDB /* TradeSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39DE2A7E4A2300968CDB /* TradeSide.swift */; };
+		7F3E39E12A7E4A5C00968CDB /* RecentTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E02A7E4A5C00968CDB /* RecentTrade.swift */; };
+		7F3E39E32A7E53AA00968CDB /* Subscribers+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */; };
+		7F3E39E72A7E870200968CDB /* OrderBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */; };
+		7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39E82A7E8D6600968CDB /* SubscriptionSymbol.swift */; };
+		7F3E39EB2A8157EA00968CDB /* CancellableBagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39EA2A8157EA00968CDB /* CancellableBagHolder.swift */; };
+		7F3E39EE2A81693800968CDB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39ED2A81693800968CDB /* DependencyContainer.swift */; };
+		7F3E39F02A81696F00968CDB /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39EF2A81696F00968CDB /* Singleton.swift */; };
+		7F3E39F22A816A8C00968CDB /* RepositoryDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F12A816A8C00968CDB /* RepositoryDependencyContainer.swift */; };
+		7F3E39F42A816AD300968CDB /* UseCaseDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */; };
+		7F3E39F62A817DD600968CDB /* RecentTradeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F52A817DD600968CDB /* RecentTradeUseCase.swift */; };
+		7F3E39F82A817DE300968CDB /* RecentTradeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F72A817DE300968CDB /* RecentTradeRepository.swift */; };
+		7F3E39FA2A819E6400968CDB /* OrderBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E39F92A819E6400968CDB /* OrderBookView.swift */; };
+		7F3E3A012A819ECD00968CDB /* OrderBookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */; };
+		7F3E3A032A81A64D00968CDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A022A81A64D00968CDB /* Colors.xcassets */; };
+		7F3E3A062A81A9D900968CDB /* Color+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A052A81A9D900968CDB /* Color+Constants.swift */; };
+		7F3E3A082A81A9F900968CDB /* Font+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A072A81A9F900968CDB /* Font+Constants.swift */; };
+		7F3E3A0A2A81AA0800968CDB /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A092A81AA0800968CDB /* Color+Extension.swift */; };
+		7F3E3A0C2A81AA4900968CDB /* CGFloat+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */; };
+		7F3E3A0F2A81AB9500968CDB /* OrderBookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A0E2A81AB9500968CDB /* OrderBookItem.swift */; };
+		7F3E3A112A81ACB600968CDB /* Strings+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A102A81ACB600968CDB /* Strings+Extension.swift */; };
+		7F3E3A132A81ACE100968CDB /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A122A81ACE100968CDB /* Number+Extension.swift */; };
+		7F3E3A192A81C4E000968CDB /* OrderBook+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A182A81C4E000968CDB /* OrderBook+Extension.swift */; };
+		7F3E3A1A2A81C74700968CDB /* OrderBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A152A81C3F300968CDB /* OrderBooks.json */; };
+		7F3E3A1B2A81C74C00968CDB /* RecentTrades.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A162A81C48500968CDB /* RecentTrades.json */; };
+		7F3E3A1D2A81CF4200968CDB /* OrderBookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A1C2A81CF4200968CDB /* OrderBookListView.swift */; };
+		7F3E3A1F2A81D8A600968CDB /* OrderBookListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */; };
+		7F3E3A212A81DB0200968CDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A202A81DB0200968CDB /* Localizable.strings */; };
+		7F3E3A232A81DB9300968CDB /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A222A81DB9300968CDB /* String+Constants.swift */; };
+		7F3E3A282A81E0C200968CDB /* SegmentViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A272A81E0C200968CDB /* SegmentViewPage.swift */; };
+		7F3E3A2C2A81E7BD00968CDB /* TabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */; };
+		7F3E3A2E2A81EC2500968CDB /* SegmentViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2D2A81EC2500968CDB /* SegmentViewItem.swift */; };
+		7F3E3A302A81EC4500968CDB /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */; };
+		7F3E3A332A81FFB600968CDB /* TabViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A322A81FFB600968CDB /* TabViewPage.swift */; };
+		7F3E3A352A81FFCF00968CDB /* OrderBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A342A81FFCF00968CDB /* OrderBookViewModel.swift */; };
+		7F3E3A372A81FFE600968CDB /* RecentTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A362A81FFE600968CDB /* RecentTradeView.swift */; };
+		7F3E3A392A82002B00968CDB /* RecentTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A382A82002B00968CDB /* RecentTradeViewModel.swift */; };
+		7F3E3A3B2A8205CC00968CDB /* Double+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A3A2A8205CC00968CDB /* Double+Constants.swift */; };
+		7F3E3A3D2A8217AF00968CDB /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */; };
+		7F3E3A3F2A8217CC00968CDB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */; };
+		7F3E3A422A82180C00968CDB /* LodingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */; };
+		7F3E3A442A823B0F00968CDB /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A432A823B0F00968CDB /* Array+Extension.swift */; };
+		7F3E3A462A823BAF00968CDB /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A452A823BAF00968CDB /* View+Animation.swift */; };
+		7F3E3A4B2A82639B00968CDB /* RecentTradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A4A2A82639B00968CDB /* RecentTradeRow.swift */; };
+		7F3E3A4E2A8264BB00968CDB /* RecentTradeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A4D2A8264BB00968CDB /* RecentTradeItem.swift */; };
+		7F3E3A502A82663900968CDB /* RecentTrade+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A4F2A82663900968CDB /* RecentTrade+Extension.swift */; };
+		7F3E3A522A8269CB00968CDB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A512A8269CB00968CDB /* Date+Extension.swift */; };
+		7F3E3A542A826E2D00968CDB /* RecentTradeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A532A826E2D00968CDB /* RecentTradeList.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F17974A2A7DB61900DE2F41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F1797312A7DB61700DE2F41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F1797382A7DB61700DE2F41;
+			remoteInfo = BitMexCrypto;
+		};
+		7F1797542A7DB61900DE2F41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F1797312A7DB61700DE2F41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F1797382A7DB61700DE2F41;
+			remoteInfo = BitMexCrypto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F1797392A7DB61700DE2F41 /* BitMexCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMexCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F17973C2A7DB61700DE2F41 /* BitMexCryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMexCryptoApp.swift; sourceTree = "<group>"; };
+		7F17973E2A7DB61800DE2F41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7F1797402A7DB61900DE2F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F1797432A7DB61900DE2F41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7F1797492A7DB61900DE2F41 /* BitMexCryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitMexCryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F17974D2A7DB61900DE2F41 /* BitMexCryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMexCryptoTests.swift; sourceTree = "<group>"; };
+		7F1797532A7DB61900DE2F41 /* BitMexCryptoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitMexCryptoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F1797572A7DB61900DE2F41 /* BitMexCryptoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMexCryptoUITests.swift; sourceTree = "<group>"; };
+		7F1797592A7DB61900DE2F41 /* BitMexCryptoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMexCryptoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F17976E2A7DB98D00DE2F41 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		7F17976F2A7DB9AE00DE2F41 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		7F1797702A7DB9BD00DE2F41 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		7F1797722A7DBC1800DE2F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F1797782A7DC3FE00DE2F41 /* WebSocketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketError.swift; sourceTree = "<group>"; };
+		7F17977A2A7DC46B00DE2F41 /* WebSocketStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketStream.swift; sourceTree = "<group>"; };
+		7F17977D2A7DC4CE00DE2F41 /* Debugger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debugger.swift; sourceTree = "<group>"; };
+		7F17977F2A7DC50600DE2F41 /* WebSocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
+		7F1797812A7DC5DB00DE2F41 /* SocketRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketRequest.swift; sourceTree = "<group>"; };
+		7F1797832A7DC60A00DE2F41 /* SubscriptionTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTopic.swift; sourceTree = "<group>"; };
+		7F1797852A7DC62A00DE2F41 /* BitMexOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMexOperation.swift; sourceTree = "<group>"; };
+		7F3E39CF2A7E39BE00968CDB /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
+		7F3E39D12A7E3A5C00968CDB /* BitMexAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMexAction.swift; sourceTree = "<group>"; };
+		7F3E39D42A7E3D8900968CDB /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
+		7F3E39D62A7E407200968CDB /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
+		7F3E39D82A7E44A900968CDB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		7F3E39DA2A7E478000968CDB /* OrderBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookRepository.swift; sourceTree = "<group>"; };
+		7F3E39DC2A7E47DB00968CDB /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
+		7F3E39DE2A7E4A2300968CDB /* TradeSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeSide.swift; sourceTree = "<group>"; };
+		7F3E39E02A7E4A5C00968CDB /* RecentTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTrade.swift; sourceTree = "<group>"; };
+		7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subscribers+Extension.swift"; sourceTree = "<group>"; };
+		7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookUseCase.swift; sourceTree = "<group>"; };
+		7F3E39E82A7E8D6600968CDB /* SubscriptionSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionSymbol.swift; sourceTree = "<group>"; };
+		7F3E39EA2A8157EA00968CDB /* CancellableBagHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableBagHolder.swift; sourceTree = "<group>"; };
+		7F3E39ED2A81693800968CDB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		7F3E39EF2A81696F00968CDB /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		7F3E39F12A816A8C00968CDB /* RepositoryDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependencyContainer.swift; sourceTree = "<group>"; };
+		7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseDependencyContainer.swift; sourceTree = "<group>"; };
+		7F3E39F52A817DD600968CDB /* RecentTradeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeUseCase.swift; sourceTree = "<group>"; };
+		7F3E39F72A817DE300968CDB /* RecentTradeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeRepository.swift; sourceTree = "<group>"; };
+		7F3E39F92A819E6400968CDB /* OrderBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookView.swift; sourceTree = "<group>"; };
+		7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookRow.swift; sourceTree = "<group>"; };
+		7F3E3A022A81A64D00968CDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		7F3E3A052A81A9D900968CDB /* Color+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A072A81A9F900968CDB /* Font+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A092A81AA0800968CDB /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A0E2A81AB9500968CDB /* OrderBookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookItem.swift; sourceTree = "<group>"; };
+		7F3E3A102A81ACB600968CDB /* Strings+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A122A81ACE100968CDB /* Number+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A152A81C3F300968CDB /* OrderBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OrderBooks.json; sourceTree = "<group>"; };
+		7F3E3A162A81C48500968CDB /* RecentTrades.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecentTrades.json; sourceTree = "<group>"; };
+		7F3E3A182A81C4E000968CDB /* OrderBook+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderBook+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A1C2A81CF4200968CDB /* OrderBookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookListView.swift; sourceTree = "<group>"; };
+		7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookListData.swift; sourceTree = "<group>"; };
+		7F3E3A202A81DB0200968CDB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7F3E3A222A81DB9300968CDB /* String+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A272A81E0C200968CDB /* SegmentViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewPage.swift; sourceTree = "<group>"; };
+		7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewHeader.swift; sourceTree = "<group>"; };
+		7F3E3A2D2A81EC2500968CDB /* SegmentViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewItem.swift; sourceTree = "<group>"; };
+		7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A322A81FFB600968CDB /* TabViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewPage.swift; sourceTree = "<group>"; };
+		7F3E3A342A81FFCF00968CDB /* OrderBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookViewModel.swift; sourceTree = "<group>"; };
+		7F3E3A362A81FFE600968CDB /* RecentTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeView.swift; sourceTree = "<group>"; };
+		7F3E3A382A82002B00968CDB /* RecentTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeViewModel.swift; sourceTree = "<group>"; };
+		7F3E3A3A2A8205CC00968CDB /* Double+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingViewModifier.swift; sourceTree = "<group>"; };
+		7F3E3A432A823B0F00968CDB /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A452A823BAF00968CDB /* View+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
+		7F3E3A4A2A82639B00968CDB /* RecentTradeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeRow.swift; sourceTree = "<group>"; };
+		7F3E3A4D2A8264BB00968CDB /* RecentTradeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeItem.swift; sourceTree = "<group>"; };
+		7F3E3A4F2A82663900968CDB /* RecentTrade+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentTrade+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A512A8269CB00968CDB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		7F3E3A532A826E2D00968CDB /* RecentTradeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeList.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F1797362A7DB61700DE2F41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1797462A7DB61900DE2F41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1797502A7DB61900DE2F41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F1797302A7DB61700DE2F41 = {
+			isa = PBXGroup;
+			children = (
+				7F17973B2A7DB61700DE2F41 /* BitMexCrypto */,
+				7F17974C2A7DB61900DE2F41 /* BitMexCryptoTests */,
+				7F1797562A7DB61900DE2F41 /* BitMexCryptoUITests */,
+				7F17973A2A7DB61700DE2F41 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F17973A2A7DB61700DE2F41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797392A7DB61700DE2F41 /* BitMexCrypto.app */,
+				7F1797492A7DB61900DE2F41 /* BitMexCryptoTests.xctest */,
+				7F1797532A7DB61900DE2F41 /* BitMexCryptoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F17973B2A7DB61700DE2F41 /* BitMexCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797662A7DB82700DE2F41 /* Presentaion */,
+				7F1797692A7DB85E00DE2F41 /* Domain */,
+				7F17976A2A7DB86800DE2F41 /* Data */,
+				7F1797752A7DC38D00DE2F41 /* Core */,
+				7F1797762A7DC3A900DE2F41 /* Network */,
+				7F17976B2A7DB87900DE2F41 /* App */,
+				7F1797422A7DB61900DE2F41 /* Preview Content */,
+			);
+			path = BitMexCrypto;
+			sourceTree = "<group>";
+		};
+		7F1797422A7DB61900DE2F41 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797432A7DB61900DE2F41 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7F17974C2A7DB61900DE2F41 /* BitMexCryptoTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F17974D2A7DB61900DE2F41 /* BitMexCryptoTests.swift */,
+			);
+			path = BitMexCryptoTests;
+			sourceTree = "<group>";
+		};
+		7F1797562A7DB61900DE2F41 /* BitMexCryptoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797572A7DB61900DE2F41 /* BitMexCryptoUITests.swift */,
+				7F1797592A7DB61900DE2F41 /* BitMexCryptoUITestsLaunchTests.swift */,
+			);
+			path = BitMexCryptoUITests;
+			sourceTree = "<group>";
+		};
+		7F1797662A7DB82700DE2F41 /* Presentaion */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797672A7DB83600DE2F41 /* Views */,
+				7F1797682A7DB84A00DE2F41 /* ViewModels */,
+			);
+			path = Presentaion;
+			sourceTree = "<group>";
+		};
+		7F1797672A7DB83600DE2F41 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A472A82631700968CDB /* OrderBook */,
+				7F3E3A482A82633E00968CDB /* RecentTrade */,
+				7F3E3A322A81FFB600968CDB /* TabViewPage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7F1797682A7DB84A00DE2F41 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A342A81FFCF00968CDB /* OrderBookViewModel.swift */,
+				7F3E3A382A82002B00968CDB /* RecentTradeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7F1797692A7DB85E00DE2F41 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A142A81C3D700968CDB /* Mock */,
+				7F1797772A7DC3E600DE2F41 /* Entity */,
+				7F3E39E52A7E86DE00968CDB /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7F17976A2A7DB86800DE2F41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797732A7DBF1100DE2F41 /* Model */,
+				7F1797742A7DBF1800DE2F41 /* Repository */,
+				7F3E39EC2A81690F00968CDB /* Factories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7F17976B2A7DB87900DE2F41 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7F17976D2A7DB91000DE2F41 /* Configuration */,
+				7F17976C2A7DB8C700DE2F41 /* Resources */,
+				7F17973C2A7DB61700DE2F41 /* BitMexCryptoApp.swift */,
+				7F17973E2A7DB61800DE2F41 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7F17976C2A7DB8C700DE2F41 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797722A7DBC1800DE2F41 /* Info.plist */,
+				7F3E3A202A81DB0200968CDB /* Localizable.strings */,
+				7F1797402A7DB61900DE2F41 /* Assets.xcassets */,
+				7F3E3A022A81A64D00968CDB /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7F17976D2A7DB91000DE2F41 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797702A7DB9BD00DE2F41 /* Configuration.swift */,
+				7F17976E2A7DB98D00DE2F41 /* Debug.xcconfig */,
+				7F17976F2A7DB9AE00DE2F41 /* Release.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		7F1797732A7DBF1100DE2F41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F1797812A7DC5DB00DE2F41 /* SocketRequest.swift */,
+				7F1797832A7DC60A00DE2F41 /* SubscriptionTopic.swift */,
+				7F3E39E82A7E8D6600968CDB /* SubscriptionSymbol.swift */,
+				7F3E39D12A7E3A5C00968CDB /* BitMexAction.swift */,
+				7F1797852A7DC62A00DE2F41 /* BitMexOperation.swift */,
+				7F1797782A7DC3FE00DE2F41 /* WebSocketError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F1797742A7DBF1800DE2F41 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39DA2A7E478000968CDB /* OrderBookRepository.swift */,
+				7F3E39F72A817DE300968CDB /* RecentTradeRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7F1797752A7DC38D00DE2F41 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A242A81E09200968CDB /* Components */,
+				7F3E3A042A81A9C100968CDB /* Constants */,
+				7F3E39D32A7E3D7C00968CDB /* Extensions */,
+				7F17977C2A7DC48D00DE2F41 /* Helper */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7F1797762A7DC3A900DE2F41 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7F17977F2A7DC50600DE2F41 /* WebSocketProvider.swift */,
+				7F17977A2A7DC46B00DE2F41 /* WebSocketStream.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7F1797772A7DC3E600DE2F41 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39CF2A7E39BE00968CDB /* Instrument.swift */,
+				7F3E39DC2A7E47DB00968CDB /* OrderBook.swift */,
+				7F3E39E02A7E4A5C00968CDB /* RecentTrade.swift */,
+				7F3E39DE2A7E4A2300968CDB /* TradeSide.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7F17977C2A7DC48D00DE2F41 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39EF2A81696F00968CDB /* Singleton.swift */,
+				7F3E39EA2A8157EA00968CDB /* CancellableBagHolder.swift */,
+				7F17977D2A7DC4CE00DE2F41 /* Debugger.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		7F3E39D32A7E3D7C00968CDB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39D62A7E407200968CDB /* Codable+Extension.swift */,
+				7F3E3A102A81ACB600968CDB /* Strings+Extension.swift */,
+				7F3E3A122A81ACE100968CDB /* Number+Extension.swift */,
+				7F3E39D42A7E3D8900968CDB /* Formatter+Extension.swift */,
+				7F3E39D82A7E44A900968CDB /* String+Extension.swift */,
+				7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */,
+				7F3E3A092A81AA0800968CDB /* Color+Extension.swift */,
+				7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */,
+				7F3E3A432A823B0F00968CDB /* Array+Extension.swift */,
+				7F3E3A3C2A8217AF00968CDB /* Optional+Extension.swift */,
+				7F3E3A3E2A8217CC00968CDB /* View+Extension.swift */,
+				7F3E3A452A823BAF00968CDB /* View+Animation.swift */,
+				7F3E3A512A8269CB00968CDB /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7F3E39E52A7E86DE00968CDB /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39E62A7E870200968CDB /* OrderBookUseCase.swift */,
+				7F3E39F52A817DD600968CDB /* RecentTradeUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		7F3E39EC2A81690F00968CDB /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E39ED2A81693800968CDB /* DependencyContainer.swift */,
+				7F3E39F12A816A8C00968CDB /* RepositoryDependencyContainer.swift */,
+				7F3E39F32A816AD300968CDB /* UseCaseDependencyContainer.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		7F3E39FB2A819E9600968CDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A002A819ECD00968CDB /* OrderBookRow.swift */,
+				7F3E3A1C2A81CF4200968CDB /* OrderBookListView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7F3E3A042A81A9C100968CDB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A222A81DB9300968CDB /* String+Constants.swift */,
+				7F3E3A052A81A9D900968CDB /* Color+Constants.swift */,
+				7F3E3A072A81A9F900968CDB /* Font+Constants.swift */,
+				7F3E3A0B2A81AA4900968CDB /* CGFloat+Constants.swift */,
+				7F3E3A3A2A8205CC00968CDB /* Double+Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		7F3E3A0D2A81AB7800968CDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A0E2A81AB9500968CDB /* OrderBookItem.swift */,
+				7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */,
+				7F3E3A2D2A81EC2500968CDB /* SegmentViewItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F3E3A142A81C3D700968CDB /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A172A81C4C700968CDB /* Json */,
+				7F3E3A182A81C4E000968CDB /* OrderBook+Extension.swift */,
+				7F3E3A4F2A82663900968CDB /* RecentTrade+Extension.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		7F3E3A172A81C4C700968CDB /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A152A81C3F300968CDB /* OrderBooks.json */,
+				7F3E3A162A81C48500968CDB /* RecentTrades.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		7F3E3A242A81E09200968CDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A402A8217FD00968CDB /* Modeifiers */,
+				7F3E3A312A81F10100968CDB /* SegmentView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7F3E3A312A81F10100968CDB /* SegmentView */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A272A81E0C200968CDB /* SegmentViewPage.swift */,
+				7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */,
+			);
+			path = SegmentView;
+			sourceTree = "<group>";
+		};
+		7F3E3A402A8217FD00968CDB /* Modeifiers */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */,
+			);
+			path = Modeifiers;
+			sourceTree = "<group>";
+		};
+		7F3E3A472A82631700968CDB /* OrderBook */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A0D2A81AB7800968CDB /* Model */,
+				7F3E39FB2A819E9600968CDB /* Components */,
+				7F3E39F92A819E6400968CDB /* OrderBookView.swift */,
+			);
+			path = OrderBook;
+			sourceTree = "<group>";
+		};
+		7F3E3A482A82633E00968CDB /* RecentTrade */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A4C2A8264A300968CDB /* Model */,
+				7F3E3A492A82638500968CDB /* Components */,
+				7F3E3A362A81FFE600968CDB /* RecentTradeView.swift */,
+			);
+			path = RecentTrade;
+			sourceTree = "<group>";
+		};
+		7F3E3A492A82638500968CDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A4A2A82639B00968CDB /* RecentTradeRow.swift */,
+				7F3E3A532A826E2D00968CDB /* RecentTradeList.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7F3E3A4C2A8264A300968CDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A4D2A8264BB00968CDB /* RecentTradeItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F1797382A7DB61700DE2F41 /* BitMexCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F17975D2A7DB61900DE2F41 /* Build configuration list for PBXNativeTarget "BitMexCrypto" */;
+			buildPhases = (
+				7F1797352A7DB61700DE2F41 /* Sources */,
+				7F1797362A7DB61700DE2F41 /* Frameworks */,
+				7F1797372A7DB61700DE2F41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BitMexCrypto;
+			productName = BitMexCrypto;
+			productReference = 7F1797392A7DB61700DE2F41 /* BitMexCrypto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F1797482A7DB61900DE2F41 /* BitMexCryptoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F1797602A7DB61900DE2F41 /* Build configuration list for PBXNativeTarget "BitMexCryptoTests" */;
+			buildPhases = (
+				7F1797452A7DB61900DE2F41 /* Sources */,
+				7F1797462A7DB61900DE2F41 /* Frameworks */,
+				7F1797472A7DB61900DE2F41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F17974B2A7DB61900DE2F41 /* PBXTargetDependency */,
+			);
+			name = BitMexCryptoTests;
+			productName = BitMexCryptoTests;
+			productReference = 7F1797492A7DB61900DE2F41 /* BitMexCryptoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7F1797522A7DB61900DE2F41 /* BitMexCryptoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F1797632A7DB61900DE2F41 /* Build configuration list for PBXNativeTarget "BitMexCryptoUITests" */;
+			buildPhases = (
+				7F17974F2A7DB61900DE2F41 /* Sources */,
+				7F1797502A7DB61900DE2F41 /* Frameworks */,
+				7F1797512A7DB61900DE2F41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F1797552A7DB61900DE2F41 /* PBXTargetDependency */,
+			);
+			name = BitMexCryptoUITests;
+			productName = BitMexCryptoUITests;
+			productReference = 7F1797532A7DB61900DE2F41 /* BitMexCryptoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F1797312A7DB61700DE2F41 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7F1797382A7DB61700DE2F41 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					7F1797482A7DB61900DE2F41 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 7F1797382A7DB61700DE2F41;
+					};
+					7F1797522A7DB61900DE2F41 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 7F1797382A7DB61700DE2F41;
+					};
+				};
+			};
+			buildConfigurationList = 7F1797342A7DB61700DE2F41 /* Build configuration list for PBXProject "BitMexCrypto" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F1797302A7DB61700DE2F41;
+			productRefGroup = 7F17973A2A7DB61700DE2F41 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F1797382A7DB61700DE2F41 /* BitMexCrypto */,
+				7F1797482A7DB61900DE2F41 /* BitMexCryptoTests */,
+				7F1797522A7DB61900DE2F41 /* BitMexCryptoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F1797372A7DB61700DE2F41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F3E3A1B2A81C74C00968CDB /* RecentTrades.json in Resources */,
+				7F3E3A212A81DB0200968CDB /* Localizable.strings in Resources */,
+				7F3E3A032A81A64D00968CDB /* Colors.xcassets in Resources */,
+				7F1797442A7DB61900DE2F41 /* Preview Assets.xcassets in Resources */,
+				7F1797412A7DB61900DE2F41 /* Assets.xcassets in Resources */,
+				7F3E3A1A2A81C74700968CDB /* OrderBooks.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1797472A7DB61900DE2F41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1797512A7DB61900DE2F41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F1797352A7DB61700DE2F41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F3E39D72A7E407200968CDB /* Codable+Extension.swift in Sources */,
+				7F3E3A0A2A81AA0800968CDB /* Color+Extension.swift in Sources */,
+				7F3E3A062A81A9D900968CDB /* Color+Constants.swift in Sources */,
+				7F3E3A502A82663900968CDB /* RecentTrade+Extension.swift in Sources */,
+				7F3E39E32A7E53AA00968CDB /* Subscribers+Extension.swift in Sources */,
+				7F3E3A522A8269CB00968CDB /* Date+Extension.swift in Sources */,
+				7F3E39DF2A7E4A2300968CDB /* TradeSide.swift in Sources */,
+				7F3E3A462A823BAF00968CDB /* View+Animation.swift in Sources */,
+				7F3E3A4B2A82639B00968CDB /* RecentTradeRow.swift in Sources */,
+				7F3E39F82A817DE300968CDB /* RecentTradeRepository.swift in Sources */,
+				7F3E3A422A82180C00968CDB /* LodingViewModifier.swift in Sources */,
+				7F3E39DD2A7E47DB00968CDB /* OrderBook.swift in Sources */,
+				7F1797822A7DC5DB00DE2F41 /* SocketRequest.swift in Sources */,
+				7F3E3A392A82002B00968CDB /* RecentTradeViewModel.swift in Sources */,
+				7F17977E2A7DC4CE00DE2F41 /* Debugger.swift in Sources */,
+				7F3E39E12A7E4A5C00968CDB /* RecentTrade.swift in Sources */,
+				7F1797862A7DC62A00DE2F41 /* BitMexOperation.swift in Sources */,
+				7F3E3A1F2A81D8A600968CDB /* OrderBookListData.swift in Sources */,
+				7F1797842A7DC60A00DE2F41 /* SubscriptionTopic.swift in Sources */,
+				7F3E39F62A817DD600968CDB /* RecentTradeUseCase.swift in Sources */,
+				7F3E39E72A7E870200968CDB /* OrderBookUseCase.swift in Sources */,
+				7F3E3A012A819ECD00968CDB /* OrderBookRow.swift in Sources */,
+				7F3E39D22A7E3A5C00968CDB /* BitMexAction.swift in Sources */,
+				7F1797712A7DB9BD00DE2F41 /* Configuration.swift in Sources */,
+				7F3E3A082A81A9F900968CDB /* Font+Constants.swift in Sources */,
+				7F3E3A332A81FFB600968CDB /* TabViewPage.swift in Sources */,
+				7F3E3A0F2A81AB9500968CDB /* OrderBookItem.swift in Sources */,
+				7F3E3A192A81C4E000968CDB /* OrderBook+Extension.swift in Sources */,
+				7F3E3A352A81FFCF00968CDB /* OrderBookViewModel.swift in Sources */,
+				7F3E3A3B2A8205CC00968CDB /* Double+Constants.swift in Sources */,
+				7F3E3A3D2A8217AF00968CDB /* Optional+Extension.swift in Sources */,
+				7F17973F2A7DB61800DE2F41 /* ContentView.swift in Sources */,
+				7F3E3A282A81E0C200968CDB /* SegmentViewPage.swift in Sources */,
+				7F3E39F42A816AD300968CDB /* UseCaseDependencyContainer.swift in Sources */,
+				7F3E3A132A81ACE100968CDB /* Number+Extension.swift in Sources */,
+				7F3E39FA2A819E6400968CDB /* OrderBookView.swift in Sources */,
+				7F3E39D52A7E3D8900968CDB /* Formatter+Extension.swift in Sources */,
+				7F3E3A1D2A81CF4200968CDB /* OrderBookListView.swift in Sources */,
+				7F3E3A542A826E2D00968CDB /* RecentTradeList.swift in Sources */,
+				7F3E39E92A7E8D6600968CDB /* SubscriptionSymbol.swift in Sources */,
+				7F3E39EB2A8157EA00968CDB /* CancellableBagHolder.swift in Sources */,
+				7F3E3A442A823B0F00968CDB /* Array+Extension.swift in Sources */,
+				7F3E3A3F2A8217CC00968CDB /* View+Extension.swift in Sources */,
+				7F1797802A7DC50600DE2F41 /* WebSocketProvider.swift in Sources */,
+				7F3E3A372A81FFE600968CDB /* RecentTradeView.swift in Sources */,
+				7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */,
+				7F3E39DB2A7E478000968CDB /* OrderBookRepository.swift in Sources */,
+				7F3E3A4E2A8264BB00968CDB /* RecentTradeItem.swift in Sources */,
+				7F3E3A112A81ACB600968CDB /* Strings+Extension.swift in Sources */,
+				7F3E39D02A7E39BE00968CDB /* Instrument.swift in Sources */,
+				7F3E39F22A816A8C00968CDB /* RepositoryDependencyContainer.swift in Sources */,
+				7F1797792A7DC3FE00DE2F41 /* WebSocketError.swift in Sources */,
+				7F3E3A0C2A81AA4900968CDB /* CGFloat+Constants.swift in Sources */,
+				7F3E39D92A7E44A900968CDB /* String+Extension.swift in Sources */,
+				7F3E3A232A81DB9300968CDB /* String+Constants.swift in Sources */,
+				7F3E3A2E2A81EC2500968CDB /* SegmentViewItem.swift in Sources */,
+				7F3E39EE2A81693800968CDB /* DependencyContainer.swift in Sources */,
+				7F3E3A2C2A81E7BD00968CDB /* TabViewHeader.swift in Sources */,
+				7F3E39F02A81696F00968CDB /* Singleton.swift in Sources */,
+				7F17973D2A7DB61700DE2F41 /* BitMexCryptoApp.swift in Sources */,
+				7F3E3A302A81EC4500968CDB /* Collection+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F1797452A7DB61900DE2F41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F17974E2A7DB61900DE2F41 /* BitMexCryptoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F17974F2A7DB61900DE2F41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F17975A2A7DB61900DE2F41 /* BitMexCryptoUITestsLaunchTests.swift in Sources */,
+				7F1797582A7DB61900DE2F41 /* BitMexCryptoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F17974B2A7DB61900DE2F41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F1797382A7DB61700DE2F41 /* BitMexCrypto */;
+			targetProxy = 7F17974A2A7DB61900DE2F41 /* PBXContainerItemProxy */;
+		};
+		7F1797552A7DB61900DE2F41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F1797382A7DB61700DE2F41 /* BitMexCrypto */;
+			targetProxy = 7F1797542A7DB61900DE2F41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7F17975B2A7DB61900DE2F41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F17976E2A7DB98D00DE2F41 /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F17975C2A7DB61900DE2F41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F17976F2A7DB9AE00DE2F41 /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F17975E2A7DB61900DE2F41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F17976E2A7DB98D00DE2F41 /* Debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BitMexCrypto/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BitMexCrypto//App/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = BitMexCrypto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7F17975F2A7DB61900DE2F41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F17976F2A7DB9AE00DE2F41 /* Release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BitMexCrypto/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BitMexCrypto//App/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = BitMexCrypto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7F1797612A7DB61900DE2F41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F17976E2A7DB98D00DE2F41 /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipster.assessment.BitMexCryptoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitMexCrypto.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BitMexCrypto";
+			};
+			name = Debug;
+		};
+		7F1797622A7DB61900DE2F41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F17976F2A7DB9AE00DE2F41 /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipster.assessment.BitMexCryptoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitMexCrypto.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BitMexCrypto";
+			};
+			name = Release;
+		};
+		7F1797642A7DB61900DE2F41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F17976E2A7DB98D00DE2F41 /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipster.assessment.BitMexCryptoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BitMexCrypto;
+			};
+			name = Debug;
+		};
+		7F1797652A7DB61900DE2F41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F17976F2A7DB9AE00DE2F41 /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipster.assessment.BitMexCryptoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BitMexCrypto;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F1797342A7DB61700DE2F41 /* Build configuration list for PBXProject "BitMexCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F17975B2A7DB61900DE2F41 /* Debug */,
+				7F17975C2A7DB61900DE2F41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F17975D2A7DB61900DE2F41 /* Build configuration list for PBXNativeTarget "BitMexCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F17975E2A7DB61900DE2F41 /* Debug */,
+				7F17975F2A7DB61900DE2F41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F1797602A7DB61900DE2F41 /* Build configuration list for PBXNativeTarget "BitMexCryptoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F1797612A7DB61900DE2F41 /* Debug */,
+				7F1797622A7DB61900DE2F41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F1797632A7DB61900DE2F41 /* Build configuration list for PBXNativeTarget "BitMexCryptoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F1797642A7DB61900DE2F41 /* Debug */,
+				7F1797652A7DB61900DE2F41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F1797312A7DB61700DE2F41 /* Project object */;
+}

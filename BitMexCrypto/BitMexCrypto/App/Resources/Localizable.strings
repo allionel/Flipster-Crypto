@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  BitMexCrypto
+
+  Created by Alireza Sotoudeh on 8/8/23.
+  
+*/
+
+"order.book.size.title" = "Qty";
+"order.book.price.title" = "Price (USD)";
+
+"order.book.title" = "Order Book";
+"recent.trade.title" = "Recent Trades";
+
+"time.title" = "Time";
