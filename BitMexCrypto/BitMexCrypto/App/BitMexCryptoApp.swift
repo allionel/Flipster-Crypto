@@ -11,7 +11,7 @@ import SwiftUI
 struct BitMexCryptoApp: App {
     var body: some Scene {
         WindowGroup {
-            RecentTradeList(data: .constant(RecentTrade.Mock.buyList.data.map(\.asLocalData)))
+            TabViewPage()
         }
     }
 }

@@ -10,8 +10,8 @@ import Foundation
 final class UseCaseDependencyContainer {
     private let repositories: RepositoryDependencyContainer
     
-    init(socketManager: WebSocketManager) {
-        repositories = .init(socketManager: socketManager)
+    init(repositories: RepositoryDependencyContainer) {
+        self.repositories = repositories
     }
     
     lazy var orderBook: OrderBookUseCase = {

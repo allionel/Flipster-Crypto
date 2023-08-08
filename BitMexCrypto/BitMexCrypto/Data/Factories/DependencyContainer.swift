@@ -9,9 +9,8 @@ import Foundation
 
 final public class DependencyContainer: Singleton {
     public static var shared: DependencyContainer = .init()
-    private let socketManager: WebSocketManager = .init(url: Configuration.shared.baseURL)
     private init() {}
 
-    private(set) lazy var useCases = UseCaseDependencyContainer(socketManager: socketManager)
-    private(set) lazy var repositories = RepositoryDependencyContainer(socketManager: socketManager)
+    private(set) lazy var repositories = RepositoryDependencyContainer()
+    private(set) lazy var useCases = UseCaseDependencyContainer(repositories: repositories)
 }

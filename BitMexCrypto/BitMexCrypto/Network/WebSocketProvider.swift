@@ -35,7 +35,7 @@ final class BitMexWebSocket<Provider: WebSocketStream, DataOutput: Decodable> wh
     
     private func sendSocketStreamIteratedOutput() async throws {
         do {
-            for try await message in webSocketStream.dropFirst(2){
+            for try await message in webSocketStream.dropFirst(2) {
                 switch message {
                 case .string(let message):
                     let data: DataOutput = try message.modelObject()

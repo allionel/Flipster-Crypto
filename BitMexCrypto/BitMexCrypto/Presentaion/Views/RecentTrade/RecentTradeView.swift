@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct RecentTradeView: View {
-    @StateObject private var viewModel: RecentTradeViewModel = .init()
+    @ObservedObject var viewModel: RecentTradeViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RecentTradeList(data: $viewModel.data)
+            .task {
+                await viewModel.subscribeOnSocket()
+            }
     }
 }
 
 struct RecentTradeView_Previews: PreviewProvider {
     static var previews: some View {
-        RecentTradeView()
+        RecentTradeView(viewModel: .init())
     }
 }
 

@@ -8,19 +8,17 @@
 import Foundation
 
 final class RepositoryDependencyContainer {
-    private let socketManager: WebSocketManager
-    
-    init(socketManager: WebSocketManager) {
-        self.socketManager = socketManager
-    }
+    init() {}
     
     lazy var orderBook: OrderBookRepositoryImp = {
+        let socketManager: WebSocketManager = .init(url: Configuration.shared.baseURL)
         let provider = BitMexWebSocket<WebSocketManager, OrderBook>(webSocketStream: socketManager)
         let repository = OrderBookRepositoryImp<BitMexWebSocket, OrderBook>(provider: provider)
         return repository
     }()
     
     lazy var recentTrade: RecentTradeRepositoryImp = {
+        let socketManager: WebSocketManager = .init(url: Configuration.shared.baseURL)
         let provider = BitMexWebSocket<WebSocketManager, RecentTrade>(webSocketStream: socketManager)
         let repository = RecentTradeRepositoryImp<BitMexWebSocket, RecentTrade>(provider: provider)
         return repository

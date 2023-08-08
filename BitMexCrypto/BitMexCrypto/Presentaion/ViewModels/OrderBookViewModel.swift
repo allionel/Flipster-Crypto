@@ -8,12 +8,13 @@
 import Foundation
 import Combine
 
-final class OrderBookViewModel: ObservableObject, CancellableBagHolder {
+@MainActor
+final class OrderBookViewModel: ObservableObject {
     @Published var data: OrderBookListData?
     @Published var loading: LoadingState = .onGoing
     
     private let useCase: OrderBookUseCase
-    var canellables: Set<AnyCancellable> = .init()
+    private var canellables: Set<AnyCancellable> = .init()
     
     private let maxCount: Int = 20
     

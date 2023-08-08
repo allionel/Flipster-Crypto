@@ -20,7 +20,7 @@ struct TabViewHeader: View {
                     }
                 }
                 .onChange(of: selectedTab) { target in
-                    withAnimation {
+                    withAnimation(.easeInOut(duration: 0.16)) {
                         proxy.scrollTo(target)
                     }
                 }
@@ -35,7 +35,7 @@ struct TabViewHeader: View {
         let indicatorColor: Color = selectedTab == index ? .indicator : Color.caption.opacity(0.2)
         
         Button {
-            withAnimation {
+            withAnimation(.easeInOut(duration: 0.16)) {
                 selectedTab = index
             }
         } label: {
