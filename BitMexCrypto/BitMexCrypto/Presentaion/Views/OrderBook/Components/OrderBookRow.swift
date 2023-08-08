@@ -12,6 +12,7 @@ struct OrderBookRow: View {
     let data: OrderBookItem
     
     static let height: CGFloat = 36
+    
     var body: some View {
         GeometryReader { metrics in
             Group {
@@ -81,7 +82,6 @@ struct OrderBookRow: View {
     
     @ViewBuilder
     private func makeHightlightBackground(with width: CGFloat) -> some View {
-        
         let width: CGFloat = volumRatio * width
         Rectangle()
             .fill(hightlightColor)

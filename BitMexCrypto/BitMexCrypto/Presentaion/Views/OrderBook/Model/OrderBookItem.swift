@@ -12,7 +12,6 @@ struct OrderBookItem {
     let qty: Int
     let price: Double
     let tradeSide: TradeSide
-    var action: BitmexAction = .partial
     var didChange: Bool = false
 }
 

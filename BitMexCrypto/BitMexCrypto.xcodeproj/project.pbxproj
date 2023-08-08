@@ -72,6 +72,9 @@
 		7F3E3A422A82180C00968CDB /* LodingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */; };
 		7F3E3A442A823B0F00968CDB /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A432A823B0F00968CDB /* Array+Extension.swift */; };
 		7F3E3A462A823BAF00968CDB /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A452A823BAF00968CDB /* View+Animation.swift */; };
+		7F3E3A4B2A82639B00968CDB /* RecentTradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A4A2A82639B00968CDB /* RecentTradeRow.swift */; };
+		7F3E3A4E2A8264BB00968CDB /* RecentTradeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A4D2A8264BB00968CDB /* RecentTradeItem.swift */; };
+		7F3E3A502A82663900968CDB /* RecentTrade+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A4F2A82663900968CDB /* RecentTrade+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +166,9 @@
 		7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodingViewModifier.swift; sourceTree = "<group>"; };
 		7F3E3A432A823B0F00968CDB /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		7F3E3A452A823BAF00968CDB /* View+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
+		7F3E3A4A2A82639B00968CDB /* RecentTradeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeRow.swift; sourceTree = "<group>"; };
+		7F3E3A4D2A8264BB00968CDB /* RecentTradeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTradeItem.swift; sourceTree = "<group>"; };
+		7F3E3A4F2A82663900968CDB /* RecentTrade+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentTrade+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,11 +267,9 @@
 		7F1797672A7DB83600DE2F41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7F3E3A0D2A81AB7800968CDB /* Model */,
-				7F3E39FB2A819E9600968CDB /* Components */,
+				7F3E3A472A82631700968CDB /* OrderBook */,
+				7F3E3A482A82633E00968CDB /* RecentTrade */,
 				7F3E3A322A81FFB600968CDB /* TabViewPage.swift */,
-				7F3E39F92A819E6400968CDB /* OrderBookView.swift */,
-				7F3E3A362A81FFE600968CDB /* RecentTradeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -468,6 +472,7 @@
 			children = (
 				7F3E3A172A81C4C700968CDB /* Json */,
 				7F3E3A182A81C4E000968CDB /* OrderBook+Extension.swift */,
+				7F3E3A4F2A82663900968CDB /* RecentTrade+Extension.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -505,6 +510,42 @@
 				7F3E3A412A82180C00968CDB /* LodingViewModifier.swift */,
 			);
 			path = Modeifiers;
+			sourceTree = "<group>";
+		};
+		7F3E3A472A82631700968CDB /* OrderBook */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A0D2A81AB7800968CDB /* Model */,
+				7F3E39FB2A819E9600968CDB /* Components */,
+				7F3E39F92A819E6400968CDB /* OrderBookView.swift */,
+			);
+			path = OrderBook;
+			sourceTree = "<group>";
+		};
+		7F3E3A482A82633E00968CDB /* RecentTrade */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A4C2A8264A300968CDB /* Model */,
+				7F3E3A492A82638500968CDB /* Components */,
+				7F3E3A362A81FFE600968CDB /* RecentTradeView.swift */,
+			);
+			path = RecentTrade;
+			sourceTree = "<group>";
+		};
+		7F3E3A492A82638500968CDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A4A2A82639B00968CDB /* RecentTradeRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7F3E3A4C2A8264A300968CDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A4D2A8264BB00968CDB /* RecentTradeItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,9 +685,11 @@
 				7F3E39D72A7E407200968CDB /* Codable+Extension.swift in Sources */,
 				7F3E3A0A2A81AA0800968CDB /* Color+Extension.swift in Sources */,
 				7F3E3A062A81A9D900968CDB /* Color+Constants.swift in Sources */,
+				7F3E3A502A82663900968CDB /* RecentTrade+Extension.swift in Sources */,
 				7F3E39E32A7E53AA00968CDB /* Subscribers+Extension.swift in Sources */,
 				7F3E39DF2A7E4A2300968CDB /* TradeSide.swift in Sources */,
 				7F3E3A462A823BAF00968CDB /* View+Animation.swift in Sources */,
+				7F3E3A4B2A82639B00968CDB /* RecentTradeRow.swift in Sources */,
 				7F3E39F82A817DE300968CDB /* RecentTradeRepository.swift in Sources */,
 				7F3E3A422A82180C00968CDB /* LodingViewModifier.swift in Sources */,
 				7F3E39DD2A7E47DB00968CDB /* OrderBook.swift in Sources */,
@@ -684,6 +727,7 @@
 				7F3E3A372A81FFE600968CDB /* RecentTradeView.swift in Sources */,
 				7F17977B2A7DC46B00DE2F41 /* WebSocketStream.swift in Sources */,
 				7F3E39DB2A7E478000968CDB /* OrderBookRepository.swift in Sources */,
+				7F3E3A4E2A8264BB00968CDB /* RecentTradeItem.swift in Sources */,
 				7F3E3A112A81ACB600968CDB /* Strings+Extension.swift in Sources */,
 				7F3E39D02A7E39BE00968CDB /* Instrument.swift in Sources */,
 				7F3E39F22A816A8C00968CDB /* RepositoryDependencyContainer.swift in Sources */,
