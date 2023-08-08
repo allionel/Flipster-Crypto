@@ -14,11 +14,22 @@ struct RecentTradeRow: View {
     
     var body: some View {
         makeTradeRow()
-            .easeOutAnimation(by: data)
+            .springAnimation(by: data.didHighlight, duration: 0.2)
+            .onAppear {
+                withAnimation {
+                    data.didHighlight = false
+                }
+            }
+            .frame(height: Self.height)
+            .background(highlightColor)
     }
     
     private var side: TradeSide {
         data.tradeSide
+    }
+    
+    private var highlightColor: Color {
+        data.didHighlight ? tintColor.opacity(0.5) : .clear
     }
     
     private var tintColor: Color {

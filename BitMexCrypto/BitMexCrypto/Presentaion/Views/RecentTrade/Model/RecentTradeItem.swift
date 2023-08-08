@@ -13,7 +13,7 @@ struct RecentTradeItem {
     let price: Double
     let tradeSide: TradeSide
     let timestamp: Date
-    var didHighlight: Bool = false
+    var didHighlight: Bool = true
 }
 
 extension RecentTradeItem: Hashable {

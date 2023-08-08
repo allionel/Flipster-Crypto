@@ -11,7 +11,7 @@ extension Date {
     public var asShortTime: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
-        let time = formatter.string(from: Date.now)
+        let time = formatter.string(from: self)
         return time
     }
 }

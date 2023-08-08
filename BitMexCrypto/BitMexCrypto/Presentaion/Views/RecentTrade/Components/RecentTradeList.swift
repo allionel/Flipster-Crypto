@@ -17,8 +17,8 @@ struct RecentTradeList: View {
             ScrollView {
                 HStack(alignment: .top, spacing: .zero) {
                     VStack(spacing: .zero) {
-                        ForEach(data, id: \.self) { item in
-                            RecentTradeRow(data: .constant(item))
+                        ForEach($data, id: \.wrappedValue.id) { $item in
+                            RecentTradeRow(data: $item)
                                 .frame(height: RecentTradeRow.height)
                         }
                     }
