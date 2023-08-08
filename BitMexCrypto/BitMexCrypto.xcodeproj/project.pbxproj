@@ -58,6 +58,10 @@
 		7F3E3A1F2A81D8A600968CDB /* OrderBookListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */; };
 		7F3E3A212A81DB0200968CDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3A202A81DB0200968CDB /* Localizable.strings */; };
 		7F3E3A232A81DB9300968CDB /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A222A81DB9300968CDB /* String+Constants.swift */; };
+		7F3E3A282A81E0C200968CDB /* SegmentViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A272A81E0C200968CDB /* SegmentViewPage.swift */; };
+		7F3E3A2C2A81E7BD00968CDB /* TabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */; };
+		7F3E3A2E2A81EC2500968CDB /* SegmentViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2D2A81EC2500968CDB /* SegmentViewItem.swift */; };
+		7F3E3A302A81EC4500968CDB /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +139,10 @@
 		7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookListData.swift; sourceTree = "<group>"; };
 		7F3E3A202A81DB0200968CDB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7F3E3A222A81DB9300968CDB /* String+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Constants.swift"; sourceTree = "<group>"; };
+		7F3E3A272A81E0C200968CDB /* SegmentViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewPage.swift; sourceTree = "<group>"; };
+		7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewHeader.swift; sourceTree = "<group>"; };
+		7F3E3A2D2A81EC2500968CDB /* SegmentViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewItem.swift; sourceTree = "<group>"; };
+		7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +332,7 @@
 		7F1797752A7DC38D00DE2F41 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7F3E3A242A81E09200968CDB /* Components */,
 				7F3E3A042A81A9C100968CDB /* Constants */,
 				7F3E39D32A7E3D7C00968CDB /* Extensions */,
 				7F17977C2A7DC48D00DE2F41 /* Helper */,
@@ -371,6 +380,7 @@
 				7F3E39D82A7E44A900968CDB /* String+Extension.swift */,
 				7F3E39E22A7E53AA00968CDB /* Subscribers+Extension.swift */,
 				7F3E3A092A81AA0800968CDB /* Color+Extension.swift */,
+				7F3E3A2F2A81EC4500968CDB /* Collection+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +429,7 @@
 			children = (
 				7F3E3A0E2A81AB9500968CDB /* OrderBookItem.swift */,
 				7F3E3A1E2A81D8A600968CDB /* OrderBookListData.swift */,
+				7F3E3A2D2A81EC2500968CDB /* SegmentViewItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +450,23 @@
 				7F3E3A162A81C48500968CDB /* RecentTrades.json */,
 			);
 			path = Json;
+			sourceTree = "<group>";
+		};
+		7F3E3A242A81E09200968CDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A312A81F10100968CDB /* SegmentView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7F3E3A312A81F10100968CDB /* SegmentView */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3A272A81E0C200968CDB /* SegmentViewPage.swift */,
+				7F3E3A2B2A81E7BD00968CDB /* TabViewHeader.swift */,
+			);
+			path = SegmentView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -597,6 +625,7 @@
 				7F3E3A0F2A81AB9500968CDB /* OrderBookItem.swift in Sources */,
 				7F3E3A192A81C4E000968CDB /* OrderBook+Extension.swift in Sources */,
 				7F17973F2A7DB61800DE2F41 /* ContentView.swift in Sources */,
+				7F3E3A282A81E0C200968CDB /* SegmentViewPage.swift in Sources */,
 				7F3E39F42A816AD300968CDB /* UseCaseDependencyContainer.swift in Sources */,
 				7F3E3A132A81ACE100968CDB /* Number+Extension.swift in Sources */,
 				7F3E39FA2A819E6400968CDB /* OrderBookView.swift in Sources */,
@@ -614,9 +643,12 @@
 				7F3E3A0C2A81AA4900968CDB /* CGFloat+Constants.swift in Sources */,
 				7F3E39D92A7E44A900968CDB /* String+Extension.swift in Sources */,
 				7F3E3A232A81DB9300968CDB /* String+Constants.swift in Sources */,
+				7F3E3A2E2A81EC2500968CDB /* SegmentViewItem.swift in Sources */,
 				7F3E39EE2A81693800968CDB /* DependencyContainer.swift in Sources */,
+				7F3E3A2C2A81E7BD00968CDB /* TabViewHeader.swift in Sources */,
 				7F3E39F02A81696F00968CDB /* Singleton.swift in Sources */,
 				7F17973D2A7DB61700DE2F41 /* BitMexCryptoApp.swift in Sources */,
+				7F3E3A302A81EC4500968CDB /* Collection+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

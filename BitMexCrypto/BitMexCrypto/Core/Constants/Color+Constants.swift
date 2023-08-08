@@ -17,4 +17,5 @@ public extension Color {
     static let caption: Color = "caption"
     static let surface: Color = "surface"
     static let action: Color = "action"
+    static let indicator: Color = "indicator"
 }

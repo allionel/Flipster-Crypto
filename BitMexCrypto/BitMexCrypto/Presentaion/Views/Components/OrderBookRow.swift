@@ -53,12 +53,14 @@ struct OrderBookRow: View {
             makeQtyText()
             Spacer()
             makePriceText()
+                .padding(.trailing, .interItemSpacing)
         }
     }
     
     private func makeRtlRow() -> some View {
         HStack {
             makePriceText()
+                .padding(.leading, .interItemSpacing)
             Spacer()
             makeQtyText()
         }

@@ -9,7 +9,7 @@ import struct SwiftUI.Font
 
 public extension Font {
     static var appTitle: Font {
-        .system(Font.TextStyle.title, design: .default, weight: .bold)
+        .system(Font.TextStyle.title3, design: .default, weight: .semibold)
     }
     
     static var appBody: Font {

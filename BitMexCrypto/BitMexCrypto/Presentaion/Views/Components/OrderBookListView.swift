@@ -39,7 +39,8 @@ struct OrderBookListView: View {
                 .font(.appRegular)
                 .foregroundColor(.surface)
         }
-        .padding(.horizontalPadding)
+        .padding(.horizontal, .horizontalPadding)
+        .padding(.vertical, .interItemSpacing)
     }
     
     private func makeOrderBookList(totalSize: Int, list: OrderBookListType) -> some View {
