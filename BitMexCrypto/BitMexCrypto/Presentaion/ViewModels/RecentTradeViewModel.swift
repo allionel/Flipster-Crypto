@@ -21,27 +21,15 @@ final class RecentTradeViewModel: ObservableObject {
     init(useCase: RecentTradeUseCase = DependencyContainer.shared.useCases.recentTrade) {
         self.useCase = useCase
         bindData()
-        
-//        Task {
-//
-//            do {
-//                try await useCase.subscribeToTrade(with: .xbtusd)
-//            } catch {
-//                Debugger.print(error)
-//                unsubscribeMessaging()
-//            }
-//        }
     }
     
     func subscribeOnSocket() async {
-//        Task {
-            do {
-                try await useCase.subscribeToTrade(with: .xbtusd)
-            } catch {
-                Debugger.print(error)
-                unsubscribeMessaging()
-            }
-//        }
+        do {
+            try await useCase.subscribeToTrade(with: .xbtusd)
+        } catch {
+            Debugger.print(error)
+            unsubscribeMessaging()
+        }
     }
     
     private func unsubscribeMessaging() {
@@ -73,17 +61,18 @@ final class RecentTradeViewModel: ObservableObject {
     }
     
     private func processData(by recentTrade: RecentTrade) {
-//        switch recentTrade.action {
-//        case .partial:
-//            handlePartialData(with: orderBook.data)
-//        case .delete:
-//            delete(with: orderBook.data)
-//        case .update:
-//            update(with: orderBook.data)
-//        case .insert:
-//            insert(with: orderBook.data)
-//        case .none:
-//            break
-//        }
+        switch recentTrade.action {
+        case .insert:
+            insert(with: recentTrade.data)
+        default:
+            break
+        }
+    }
+    
+    private func insert(with items: [RecentTrade.RecentTradeItem]) {
+        let items = items.map(\.asLocalData)
+        data.append(contentsOf: items)
+        data = Array(data.suffix(30))
+        data.sort(by: { $0.timestamp > $1.timestamp })
     }
 }
