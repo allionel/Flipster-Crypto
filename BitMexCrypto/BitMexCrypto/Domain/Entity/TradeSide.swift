@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum TradeSide: String, Decodable , Encodable{
+public enum TradeSide: String, Decodable {
     case buy = "Buy"
     case sell = "Sell"
     

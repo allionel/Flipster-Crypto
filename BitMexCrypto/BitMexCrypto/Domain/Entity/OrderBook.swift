@@ -10,7 +10,7 @@ import Foundation
 public struct OrderBook: Decodable, Equatable {
     public let table: SubscriptionTopic?
     public let action: BitmexAction?
-    public let data: [OrderBook.OrderBookItem]?
+    public let data: [OrderBook.OrderBookItem]
 }
 
 extension OrderBook {
@@ -30,7 +30,7 @@ extension OrderBook.OrderBookItem: Hashable {
     }
 
     public static func == (lhs: OrderBook.OrderBookItem, rhs: OrderBook.OrderBookItem) -> Bool {
-        lhs.id == rhs.id
+        lhs.hashValue == rhs.hashValue
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum BitmexAction: String, Decodable, Encodable{
+public enum BitmexAction: String, Decodable {
     case partial
     case delete
     case update
