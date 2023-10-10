@@ -3,5 +3,6 @@
 
 
 
-https://github.com/allionel/Flipster-Crypto/assets/19648240/3eb11f7b-dac6-45e6-9930-f4b3734bedf0
+
+https://github.com/allionel/Flipster-Crypto/assets/19648240/6857b489-6a71-4f76-8068-1da4a190c4fb
 
